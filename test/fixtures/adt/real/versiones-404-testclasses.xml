@@ -1,0 +1,2 @@
+<!-- VERIFICADO 2026-10-30: GET /sap/bc/adt/oo/classes/z_ejemplo_2/includes/testclasses/versions -> HTTP/1.1 404  Not Found (application/xml); anonimizado -->
+<?xml version="1.0" encoding="utf-8"?><exc:exception xmlns:exc="http://www.sap.com/abapxml/types/communicationframework"><namespace id="com.sap.adt"/><type id="ExceptionResourceNotFound"/><message lang="EN">Object CINC Z_EJEMPLO_2=================CCAU does not exist</message><localizedMessage lang="ES">Object CINC Z_EJEMPLO_2=================CCAU does not exist</localizedMessage><properties/></exc:exception>

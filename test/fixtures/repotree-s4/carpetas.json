@@ -1,0 +1,282 @@
+[
+  {
+    "ruta": "abap:/repotree-v1/DEST-S4",
+    "estado": "ok",
+    "entradas": [
+      {
+        "nombre": "Local Objects ($TMP)",
+        "tipo": "carpeta"
+      },
+      {
+        "nombre": "System Library",
+        "tipo": "carpeta"
+      }
+    ],
+    "truncado": false,
+    "total": 2
+  },
+  {
+    "ruta": "abap:/repotree-v1/DEST-S4/Local%20Objects%20(%24TMP)",
+    "estado": "ok",
+    "entradas": [
+      {
+        "nombre": "USUARIO",
+        "tipo": "carpeta"
+      },
+      {
+        "nombre": "$tmp.devc.json",
+        "tipo": "archivo"
+      }
+    ],
+    "truncado": false,
+    "total": 2
+  },
+  {
+    "ruta": "abap:/repotree-v1/DEST-S4/System%20Library",
+    "estado": "ok",
+    "entradas": [
+      {
+        "nombre": "ZPAQ_S4",
+        "tipo": "carpeta"
+      },
+      {
+        "nombre": "ZPAQ_S4_2",
+        "tipo": "carpeta"
+      }
+    ],
+    "truncado": false,
+    "total": 2
+  },
+  {
+    "ruta": "abap:/repotree-v1/DEST-S4/System%20Library/ZPAQ_S4",
+    "estado": "ok",
+    "entradas": [
+      {
+        "nombre": "zpaq_s4.devc.json",
+        "tipo": "archivo"
+      },
+      {
+        "nombre": "Business Engineering",
+        "tipo": "carpeta"
+      },
+      {
+        "nombre": "Dictionary",
+        "tipo": "carpeta"
+      },
+      {
+        "nombre": "Enhancements",
+        "tipo": "carpeta"
+      },
+      {
+        "nombre": "Enterprise Services",
+        "tipo": "carpeta"
+      },
+      {
+        "nombre": "Message Classes",
+        "tipo": "carpeta"
+      },
+      {
+        "nombre": "Others",
+        "tipo": "carpeta"
+      },
+      {
+        "nombre": "Source Code Library",
+        "tipo": "carpeta"
+      },
+      {
+        "nombre": "Transactions",
+        "tipo": "carpeta"
+      },
+      {
+        "nombre": "Transformations",
+        "tipo": "carpeta"
+      },
+      {
+        "nombre": "Web Dynpro",
+        "tipo": "carpeta"
+      }
+    ],
+    "truncado": false,
+    "total": 11
+  },
+  {
+    "ruta": "abap:/repotree-v1/DEST-S4/System%20Library/ZPAQ_S4/Dictionary",
+    "estado": "ok",
+    "entradas": [
+      {
+        "nombre": "Data Elements",
+        "tipo": "carpeta"
+      },
+      {
+        "nombre": "Database Tables",
+        "tipo": "carpeta"
+      },
+      {
+        "nombre": "Domains",
+        "tipo": "carpeta"
+      },
+      {
+        "nombre": "Srch Helps",
+        "tipo": "carpeta"
+      },
+      {
+        "nombre": "Structures",
+        "tipo": "carpeta"
+      },
+      {
+        "nombre": "Table Types",
+        "tipo": "carpeta"
+      },
+      {
+        "nombre": "Views",
+        "tipo": "carpeta"
+      }
+    ],
+    "truncado": false,
+    "total": 7
+  },
+  {
+    "ruta": "abap:/repotree-v1/DEST-S4/System%20Library/ZPAQ_S4/Dictionary/Database%20Tables",
+    "estado": "ok",
+    "entradas": [
+      {
+        "nombre": "ZTAB_EJEMPLO",
+        "tipo": "carpeta"
+      },
+      {
+        "nombre": "ZTAB_EJEMPLO_2",
+        "tipo": "carpeta"
+      }
+    ],
+    "truncado": false,
+    "total": 2
+  },
+  {
+    "ruta": "abap:/repotree-v1/DEST-S4/System%20Library/ZPAQ_S4/Source%20Code%20Library",
+    "estado": "ok",
+    "entradas": [
+      {
+        "nombre": "Classes",
+        "tipo": "carpeta"
+      },
+      {
+        "nombre": "Function Groups",
+        "tipo": "carpeta"
+      },
+      {
+        "nombre": "Includes",
+        "tipo": "carpeta"
+      },
+      {
+        "nombre": "Interfaces",
+        "tipo": "carpeta"
+      },
+      {
+        "nombre": "Programs",
+        "tipo": "carpeta"
+      }
+    ],
+    "truncado": false,
+    "total": 5
+  },
+  {
+    "ruta": "abap:/repotree-v1/DEST-S4/System%20Library/ZPAQ_S4/Source%20Code%20Library/Function%20Groups",
+    "estado": "ok",
+    "entradas": [
+      {
+        "nombre": "ZFG_EJEMPLO",
+        "tipo": "carpeta"
+      }
+    ],
+    "truncado": false,
+    "total": 1
+  },
+  {
+    "ruta": "abap:/repotree-v1/DEST-S4/System%20Library/ZPAQ_S4/Dictionary/Database%20Tables/ZTAB_EJEMPLO",
+    "estado": "ok",
+    "entradas": [
+      {
+        "nombre": "ztab_ejemplo.tabl.json",
+        "tipo": "archivo"
+      },
+      {
+        "nombre": "ztab_ejemplo.tabl.ddic",
+        "tipo": "archivo"
+      }
+    ],
+    "truncado": false,
+    "total": 2
+  },
+  {
+    "ruta": "abap:/repotree-v1/DEST-S4/System%20Library/ZPAQ_S4/Source%20Code%20Library/Function%20Groups/ZFG_EJEMPLO",
+    "estado": "ok",
+    "entradas": [
+      {
+        "nombre": "zfg_ejemplo.fugr.json",
+        "tipo": "archivo"
+      },
+      {
+        "nombre": "zfg_ejemplo.fugr.saplzfg_ejemplo.reps.abap",
+        "tipo": "archivo"
+      },
+      {
+        "nombre": "zfg_ejemplo.fugr.saplzfg_ejemplo.reps.json",
+        "tipo": "archivo"
+      },
+      {
+        "nombre": "zfg_ejemplo.fugr.lzfg_ejemplotop.reps.abap",
+        "tipo": "archivo"
+      },
+      {
+        "nombre": "zfg_ejemplo.fugr.lzfg_ejemplotop.reps.json",
+        "tipo": "archivo"
+      },
+      {
+        "nombre": "zfg_ejemplo.fugr.z_fm_ejemplo.func.abap",
+        "tipo": "archivo"
+      },
+      {
+        "nombre": "zfg_ejemplo.fugr.z_fm_ejemplo.func.json",
+        "tipo": "archivo"
+      },
+      {
+        "nombre": "zfg_ejemplo.fugr.z_fm_ejemplo_2.func.abap",
+        "tipo": "archivo"
+      },
+      {
+        "nombre": "zfg_ejemplo.fugr.z_fm_ejemplo_2.func.json",
+        "tipo": "archivo"
+      }
+    ],
+    "truncado": false,
+    "total": 9
+  },
+  {
+    "ruta": "abap:/repotree-v1/DEST-S4/System%20Library/ZPAQ_S4/Source%20Code%20Library/Classes/ZCL_EJEMPLO_S4",
+    "estado": "ok",
+    "entradas": [
+      {
+        "nombre": "zcl_ejemplo_s4.clas.json",
+        "tipo": "archivo"
+      },
+      {
+        "nombre": "zcl_ejemplo_s4.clas.abap",
+        "tipo": "archivo"
+      },
+      {
+        "nombre": "zcl_ejemplo_s4.clas.definitions.abap",
+        "tipo": "archivo"
+      },
+      {
+        "nombre": "zcl_ejemplo_s4.clas.implementations.abap",
+        "tipo": "archivo"
+      },
+      {
+        "nombre": "zcl_ejemplo_s4.clas.macros.abap",
+        "tipo": "archivo"
+      }
+    ],
+    "truncado": false,
+    "total": 5
+  }
+]

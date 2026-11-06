@@ -1,0 +1,33 @@
+{
+  "formatVersion": "1",
+  "destinations": [
+    {
+      "id": "DEV-X",
+      "protocol": "rfc",
+      "properties": {
+        "systemId": "DEV",
+        "client": "100",
+        "language": "ES",
+        "user": "USUARIO",
+        "applicationServer": "host.local",
+        "systemNumber": "00",
+        "ssoEnabled": "false",
+        "sncType": ""
+      }
+    },
+    {
+      "id": "QAS-X",
+      "protocol": "rfc",
+      "properties": {
+        "systemId": "QAS",
+        "client": "200",
+        "language": "EN",
+        "user": "OTRO",
+        "applicationServer": "qas.local",
+        "systemNumber": "01",
+        "ssoEnabled": "true",
+        "sncType": "snc"
+      }
+    }
+  ]
+}

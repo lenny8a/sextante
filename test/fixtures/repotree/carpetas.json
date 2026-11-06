@@ -1,0 +1,214 @@
+[
+  {
+    "ruta": "abap:/repotree-v1/DEST",
+    "estado": "ok",
+    "entradas": [
+      {
+        "nombre": "Local Objects ($TMP)",
+        "tipo": "carpeta"
+      },
+      {
+        "nombre": "System Library",
+        "tipo": "carpeta"
+      }
+    ],
+    "truncado": false,
+    "total": 2
+  },
+  {
+    "ruta": "abap:/repotree-v1/DEST/Local%20Objects%20(%24TMP)",
+    "estado": "ok",
+    "entradas": [
+      {
+        "nombre": "ABAP",
+        "tipo": "carpeta"
+      },
+      {
+        "nombre": "$tmp.devck.jsonc",
+        "tipo": "archivo"
+      }
+    ],
+    "truncado": false,
+    "total": 2
+  },
+  {
+    "ruta": "abap:/repotree-v1/DEST/System%20Library",
+    "estado": "ok",
+    "entradas": [
+      {
+        "nombre": "(1CRMES)ES_GEN",
+        "tipo": "carpeta"
+      },
+      {
+        "nombre": "(ASU)STRUCTURE",
+        "tipo": "carpeta"
+      },
+      {
+        "nombre": "(BDL)STPI_STRUCTURE",
+        "tipo": "carpeta"
+      },
+      {
+        "nombre": "(BODS)RS_DS_FM_APPL",
+        "tipo": "carpeta"
+      },
+      {
+        "nombre": "(GBHCM)GBHCM002",
+        "tipo": "carpeta"
+      },
+      {
+        "nombre": "(GBHCM)GBHCM003",
+        "tipo": "carpeta"
+      },
+      {
+        "nombre": "(ICMTEST)CS_A",
+        "tipo": "carpeta"
+      },
+      {
+        "nombre": "(ISDFPS)MIP",
+        "tipo": "carpeta"
+      },
+      {
+        "nombre": "(IWBEP)FRAMEWORK",
+        "tipo": "carpeta"
+      },
+      {
+        "nombre": "(IWBEP)JSON_RPC",
+        "tipo": "carpeta"
+      }
+    ],
+    "truncado": true,
+    "total": 411
+  },
+  {
+    "ruta": "abap:/repotree-v1/DEST/System%20Library/ZPAQ1",
+    "estado": "ok",
+    "entradas": [
+      {
+        "nombre": "zpaq1.devck.jsonc",
+        "tipo": "archivo"
+      },
+      {
+        "nombre": "Source Library",
+        "tipo": "carpeta"
+      },
+      {
+        "nombre": "Dictionary",
+        "tipo": "carpeta"
+      },
+      {
+        "nombre": "Message Classes",
+        "tipo": "carpeta"
+      },
+      {
+        "nombre": "Connectivity",
+        "tipo": "carpeta"
+      },
+      {
+        "nombre": "Others",
+        "tipo": "carpeta"
+      }
+    ],
+    "truncado": false,
+    "total": 6
+  },
+  {
+    "ruta": "abap:/repotree-v1/DEST/System%20Library/ZPAQ1/Source%20Library",
+    "estado": "ok",
+    "entradas": [
+      {
+        "nombre": "Function Groups",
+        "tipo": "carpeta"
+      },
+      {
+        "nombre": "Interfaces",
+        "tipo": "carpeta"
+      },
+      {
+        "nombre": "Classes",
+        "tipo": "carpeta"
+      }
+    ],
+    "truncado": false,
+    "total": 3
+  },
+  {
+    "ruta": "abap:/repotree-v1/DEST/System%20Library/ZPAQ1/Source%20Library/Classes",
+    "estado": "ok",
+    "entradas": [
+      {
+        "nombre": "ZCL_EJEMPLO_2",
+        "tipo": "carpeta"
+      },
+      {
+        "nombre": "ZCL_EJEMPLO_3",
+        "tipo": "carpeta"
+      },
+      {
+        "nombre": "ZCL_EJEMPLO",
+        "tipo": "carpeta"
+      },
+      {
+        "nombre": "ZCL_EJEMPLO_4",
+        "tipo": "carpeta"
+      }
+    ],
+    "truncado": false,
+    "total": 4
+  },
+  {
+    "ruta": "abap:/repotree-v1/DEST/System%20Library/ZPAQ2/Others",
+    "estado": "ok",
+    "entradas": [],
+    "truncado": false,
+    "total": 0
+  },
+  {
+    "ruta": "abap:/repotree-v1/DEST/System%20Library/ZPAQ2/Enhancements",
+    "estado": "ok",
+    "entradas": [],
+    "truncado": false,
+    "total": 0
+  },
+  {
+    "ruta": "abap:/repotree-v1/DEST/System%20Library/ZPAQ2/Transactions",
+    "estado": "ok",
+    "entradas": [],
+    "truncado": false,
+    "total": 0
+  },
+  {
+    "ruta": "abap:/repotree-v1/DEST/System%20Library/ZPAQ2/Message%20Classes",
+    "estado": "ok",
+    "entradas": [],
+    "truncado": false,
+    "total": 0
+  },
+  {
+    "ruta": "abap:/repotree-v1/DEST/System%20Library/ZPAQ1/Source%20Library/Function%20Groups",
+    "estado": "ok",
+    "entradas": [],
+    "truncado": false,
+    "total": 0
+  },
+  {
+    "ruta": "abap:/repotree-v1/DEST/System%20Library/ZPAQ1/Connectivity",
+    "estado": "ok",
+    "entradas": [],
+    "truncado": false,
+    "total": 0
+  },
+  {
+    "ruta": "abap:/repotree-v1/DEST/System%20Library/ZPAQ1/Dictionary",
+    "estado": "ok",
+    "entradas": [],
+    "truncado": false,
+    "total": 0
+  },
+  {
+    "ruta": "abap:/repotree-v1/DEST/System%20Library/ZPAQ2/Dictionary",
+    "estado": "ok",
+    "entradas": [],
+    "truncado": false,
+    "total": 0
+  }
+]

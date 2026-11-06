@@ -1,0 +1,69 @@
+{
+  "nota": "Escrito a mano y anonimizado a partir de respuestas reales de un S/4HANA (2026-10-29). vscode.open sobre el .fugr.json abre con símbolos JSON (omitidos aquí); abrir .reps.abap y .func.abap NO VERIFICADO.",
+  "uri": "abap:/repotree-v1/DEST-S4/System%20Library/ZPAQ_S4/Source%20Code%20Library/Function%20Groups/ZFG_EJEMPLO/zfg_ejemplo.fugr.json",
+  "informe": {
+    "fecha": "2026-10-29T12:00:00.000Z",
+    "versionOficial": "1.2.0",
+    "uriEditor": "abap:/repotree-v1/DEST-S4/System%20Library/ZPAQ_S4/Source%20Code%20Library/Function%20Groups/ZFG_EJEMPLO/zfg_ejemplo.fugr.json",
+    "analisis": {
+      "destino": "DEST-S4",
+      "paquetes": [
+        "System Library",
+        "ZPAQ_S4",
+        "Source Code Library",
+        "Function Groups",
+        "ZFG_EJEMPLO"
+      ],
+      "archivo": "zfg_ejemplo.fugr.json"
+    },
+    "nombreAff": {
+      "nombre": "zfg_ejemplo",
+      "tipo": "fugr",
+      "extension": "json"
+    },
+    "hermanos": {
+      "entradas": [
+        {
+          "nombre": "zfg_ejemplo.fugr.json",
+          "tipo": "archivo"
+        },
+        {
+          "nombre": "zfg_ejemplo.fugr.saplzfg_ejemplo.reps.abap",
+          "tipo": "archivo"
+        },
+        {
+          "nombre": "zfg_ejemplo.fugr.saplzfg_ejemplo.reps.json",
+          "tipo": "archivo"
+        },
+        {
+          "nombre": "zfg_ejemplo.fugr.lzfg_ejemplotop.reps.abap",
+          "tipo": "archivo"
+        },
+        {
+          "nombre": "zfg_ejemplo.fugr.lzfg_ejemplotop.reps.json",
+          "tipo": "archivo"
+        },
+        {
+          "nombre": "zfg_ejemplo.fugr.z_fm_ejemplo.func.abap",
+          "tipo": "archivo"
+        },
+        {
+          "nombre": "zfg_ejemplo.fugr.z_fm_ejemplo.func.json",
+          "tipo": "archivo"
+        },
+        {
+          "nombre": "zfg_ejemplo.fugr.z_fm_ejemplo_2.func.abap",
+          "tipo": "archivo"
+        },
+        {
+          "nombre": "zfg_ejemplo.fugr.z_fm_ejemplo_2.func.json",
+          "tipo": "archivo"
+        }
+      ],
+      "truncado": false,
+      "total": 9
+    },
+    "simbolosEstado": "omitidos",
+    "simbolos": []
+  }
+}

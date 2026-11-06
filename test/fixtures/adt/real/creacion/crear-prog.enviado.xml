@@ -1,0 +1,1 @@
+<?xml version="1.0" encoding="UTF-8"?><program:abapProgram xmlns:program="http://www.sap.com/adt/programs/programs" xmlns:adtcore="http://www.sap.com/adt/core" adtcore:type="PROG/P" adtcore:name="ZPROG_EJEMPLO2" adtcore:description="Ejemplo Sextante: programa" adtcore:responsible="USUARIO"><adtcore:packageRef adtcore:name="$TMP"/></program:abapProgram>

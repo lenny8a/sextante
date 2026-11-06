@@ -1,0 +1,205 @@
+{
+  "uri": "abap:/repotree-v1/DEST/System%20Library/ZPAQ4/Dictionary/ABAP%20DDL%20Sources/ZCDS_EJEMPLO/zcds_ejemplo.ddls.acds",
+  "informe": {
+    "fecha": "2026-10-29T18:27:44.975Z",
+    "versionOficial": "1.2.0",
+    "uriEditor": "abap:/repotree-v1/DEST/System%20Library/ZPAQ4/Dictionary/ABAP%20DDL%20Sources/ZCDS_EJEMPLO/zcds_ejemplo.ddls.acds",
+    "analisis": {
+      "destino": "DEST",
+      "paquetes": [
+        "System Library",
+        "ZPAQ4",
+        "Dictionary",
+        "ABAP DDL Sources",
+        "ZCDS_EJEMPLO"
+      ],
+      "archivo": "zcds_ejemplo.ddls.acds"
+    },
+    "nombreAff": {
+      "nombre": "zcds_ejemplo",
+      "tipo": "ddls",
+      "extension": "acds"
+    },
+    "hermanos": {
+      "entradas": [
+        {
+          "nombre": "zcds_ejemplo.ddls.json",
+          "tipo": "archivo"
+        },
+        {
+          "nombre": "zcds_ejemplo.ddls.acds",
+          "tipo": "archivo"
+        }
+      ],
+      "truncado": false,
+      "total": 2
+    },
+    "cadenaPadres": [
+      {
+        "ruta": "/repotree-v1/DEST/System Library/ZPAQ4/Dictionary/ABAP DDL Sources/ZCDS_EJEMPLO",
+        "hijos": {
+          "entradas": [
+            {
+              "nombre": "zcds_ejemplo.ddls.json",
+              "tipo": "archivo"
+            },
+            {
+              "nombre": "zcds_ejemplo.ddls.acds",
+              "tipo": "archivo"
+            }
+          ],
+          "truncado": false,
+          "total": 2
+        }
+      },
+      {
+        "ruta": "/repotree-v1/DEST/System Library/ZPAQ4/Dictionary/ABAP DDL Sources",
+        "hijos": {
+          "entradas": [
+            {
+              "nombre": "ZCDS_EJEMPLO_2",
+              "tipo": "carpeta"
+            },
+            {
+              "nombre": "ZCDS_EJEMPLO",
+              "tipo": "carpeta"
+            },
+            {
+              "nombre": "ZCDS_EJEMPLO_3",
+              "tipo": "carpeta"
+            },
+            {
+              "nombre": "ZCDS_EJEMPLO_4",
+              "tipo": "carpeta"
+            },
+            {
+              "nombre": "ZCDS_EJEMPLO_5",
+              "tipo": "carpeta"
+            }
+          ],
+          "truncado": false,
+          "total": 5
+        }
+      },
+      {
+        "ruta": "/repotree-v1/DEST/System Library/ZPAQ4/Dictionary",
+        "hijos": {
+          "entradas": [
+            {
+              "nombre": "Views",
+              "tipo": "carpeta"
+            },
+            {
+              "nombre": "ABAP DDL Sources",
+              "tipo": "carpeta"
+            },
+            {
+              "nombre": "Structures",
+              "tipo": "carpeta"
+            }
+          ],
+          "truncado": false,
+          "total": 3
+        }
+      },
+      {
+        "ruta": "/repotree-v1/DEST/System Library/ZPAQ4",
+        "hijos": {
+          "entradas": [
+            {
+              "nombre": "zpaq4.devck.jsonc",
+              "tipo": "archivo"
+            },
+            {
+              "nombre": "Source Library",
+              "tipo": "carpeta"
+            },
+            {
+              "nombre": "Dictionary",
+              "tipo": "carpeta"
+            },
+            {
+              "nombre": "Transactions",
+              "tipo": "carpeta"
+            }
+          ],
+          "truncado": false,
+          "total": 4
+        }
+      },
+      {
+        "ruta": "/repotree-v1/DEST/System Library",
+        "hijos": {
+          "entradas": [
+            {
+              "nombre": "(1CRMES)ES_GEN",
+              "tipo": "carpeta"
+            },
+            {
+              "nombre": "(ASU)STRUCTURE",
+              "tipo": "carpeta"
+            },
+            {
+              "nombre": "(BDL)STPI_STRUCTURE",
+              "tipo": "carpeta"
+            },
+            {
+              "nombre": "(BODS)RS_DS_FM_APPL",
+              "tipo": "carpeta"
+            },
+            {
+              "nombre": "(GBHCM)GBHCM002",
+              "tipo": "carpeta"
+            },
+            {
+              "nombre": "(GBHCM)GBHCM003",
+              "tipo": "carpeta"
+            },
+            {
+              "nombre": "(ICMTEST)CS_A",
+              "tipo": "carpeta"
+            },
+            {
+              "nombre": "(ISDFPS)MIP",
+              "tipo": "carpeta"
+            },
+            {
+              "nombre": "(IWBEP)FRAMEWORK",
+              "tipo": "carpeta"
+            },
+            {
+              "nombre": "(IWBEP)JSON_RPC",
+              "tipo": "carpeta"
+            }
+          ],
+          "truncado": true,
+          "total": 411
+        }
+      },
+      {
+        "ruta": "/repotree-v1/DEST",
+        "hijos": {
+          "entradas": [
+            {
+              "nombre": "Local Objects ($TMP)",
+              "tipo": "carpeta"
+            },
+            {
+              "nombre": "System Library",
+              "tipo": "carpeta"
+            }
+          ],
+          "truncado": false,
+          "total": 2
+        }
+      }
+    ],
+    "simbolosEstado": "vacio",
+    "simbolos": [],
+    "checkObject": {
+      "ok": true,
+      "resultadoTipo": "undefined",
+      "uriActivaAlLlamar": "abap:/repotree-v1/DEST/System%20Library/ZPAQ4/Dictionary/ABAP%20DDL%20Sources/ZCDS_EJEMPLO/zcds_ejemplo.ddls.acds"
+    }
+  }
+}

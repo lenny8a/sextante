@@ -1,0 +1,6 @@
+GET /sap/bc/adt/programs/programs/zprog_ejemplo2
+HTTP/1.1 200  OK
+~server_protocol: HTTP/1.1
+ETag: 202611042036040006
+Last-Modified: Wed, 04 Nov 2026 20:36:04 GMT
+Content-Type: application/vnd.sap.adt.programs.programs.v2+xml; charset=utf-8

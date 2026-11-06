@@ -1,0 +1,21 @@
+* VERIFICADO 2026-10-30: GET /sap/bc/adt/ddic/tables/mara/source/main -> HTTP/1.1 200  OK (text/plain; charset=utf-8); anonimizado
+@EndUserText.label : 'General Material Data'
+@AbapCatalog.enhancementCategory : #EXTENSIBLE_CHARACTER_NUMERIC
+@AbapCatalog.tableCategory : #TRANSPARENT
+@AbapCatalog.deliveryClass : #A
+@AbapCatalog.dataMaintenance : #LIMITED
+define table mara {
+  @AbapCatalog.foreignKey.label : 'Client'
+  @AbapCatalog.foreignKey.keyType : #KEY
+  @AbapCatalog.foreignKey.screenCheck : true
+  key mandt : mandt not null
+    with foreign key [0..*,1] t000
+      where mandt = mara.mandt;
+  key matnr : matnr not null
+    with value help mat1
+      where matnr = mara.matnr;
+  include emara
+    extend /cwm/tolgr :
+      remove foreign key
+    @AbapCatalog.foreignKey.label : 'Container Requirement(s)'
+    @AbapCatalog.foreignKey.keyType : #NON_KEY

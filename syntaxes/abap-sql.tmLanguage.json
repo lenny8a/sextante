@@ -1,0 +1,79 @@
+{
+  "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+  "name": "ABAP SQL",
+  "scopeName": "source.abap-sql",
+  "patterns": [
+    {
+      "name": "comment.line.star.abap-sql",
+      "match": "^\\*.*$"
+    },
+    {
+      "name": "comment.line.double-quote.abap-sql",
+      "match": "\".*$"
+    },
+    {
+      "name": "comment.line.double-dash.abap-sql",
+      "match": "--.*$"
+    },
+    {
+      "name": "string.quoted.single.abap-sql",
+      "match": "'(?:[^']|'')*'"
+    },
+    {
+      "name": "string.quoted.other.abap-sql",
+      "match": "\\|[^|]*\\|"
+    },
+    {
+      "match": "(?i)\\b(FROM|JOIN|INTO|UPDATE)\\s+(?!(?:TABLE|CORRESPONDING)\\b)([A-Za-z_/][\\w/]*)(?:\\s+(AS)\\s+([A-Za-z_]\\w*))?",
+      "captures": {
+        "1": {
+          "name": "keyword.other.abap-sql"
+        },
+        "2": {
+          "name": "entity.name.type.table.abap-sql"
+        },
+        "3": {
+          "name": "keyword.other.abap-sql"
+        },
+        "4": {
+          "name": "variable.other.alias.abap-sql"
+        }
+      }
+    },
+    {
+      "match": "(?i)\\b(AS)\\s+(CHAR|DEC|INT1|INT2|INT4|INT8|FLTP|NUMC|DATS|TIMS|SSTRING|STRING|CURR|CUKY|QUAN|UNIT|RAW)\\b",
+      "captures": {
+        "1": {
+          "name": "keyword.other.abap-sql"
+        },
+        "2": {
+          "name": "storage.type.abap-sql"
+        }
+      }
+    },
+    {
+      "name": "constant.numeric.abap-sql",
+      "match": "\\b\\d+(?:\\.\\d+)?\\b"
+    },
+    {
+      "name": "variable.other.host.abap-sql",
+      "match": "@[A-Za-z_][\\w/]*(?:-[\\w/]+)*"
+    },
+    {
+      "name": "variable.other.host.abap-sql",
+      "match": "@\\("
+    },
+    {
+      "name": "support.function.abap-sql",
+      "match": "(?i)\\b(?:COUNT|SUM|AVG|MIN|MAX|ABS|CEIL|FLOOR|ROUND|DIV|MOD|DIVISION|CONCAT|CONCAT_WITH_SPACE|LPAD|RPAD|LTRIM|RTRIM|LENGTH|LEFT|RIGHT|SUBSTRING|INSTR|REPLACE|UPPER|LOWER|COALESCE|DATS_IS_VALID|DATS_DAYS_BETWEEN|DATS_ADD_DAYS|DATS_ADD_MONTHS|TSTMP_IS_VALID|TSTMP_CURRENT_UTCTIMESTAMP|UUID|STRING_AGG|CURRENCY_CONVERSION|UNIT_CONVERSION)\\b(?=\\s*\\()"
+    },
+    {
+      "name": "keyword.other.abap-sql",
+      "match": "(?i)\\b(?:FOR\\s+ALL\\s+ENTRIES|SELECT|SINGLE|DISTINCT|FROM|FIELDS|WHERE|AND|OR|NOT|IN|LIKE|ESCAPE|BETWEEN|IS|NULL|INITIAL|EXISTS|INNER|LEFT|RIGHT|OUTER|CROSS|JOIN|ON|AS|GROUP|BY|HAVING|ORDER|ASCENDING|DESCENDING|PRIMARY|KEY|UP|TO|ROWS|OFFSET|UNION|ALL|INTERSECT|EXCEPT|WITH|CASE|WHEN|THEN|ELSE|END|CAST|INTO|TABLE|CORRESPONDING|CLIENT|SPECIFIED|BYPASSING|BUFFER|FOR|UPDATE|APPENDING|PACKAGE|SIZE|ENDSELECT|INSERT|DELETE|MODIFY|SET|VALUES)\\b"
+    },
+    {
+      "name": "keyword.operator.abap-sql",
+      "match": "~|<>|<=|>=|=|<|>|\\+|-|/|\\*"
+    }
+  ]
+}

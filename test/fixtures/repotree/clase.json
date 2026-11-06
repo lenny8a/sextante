@@ -1,0 +1,724 @@
+{
+  "uri": "abap:/repotree-v1/DEST/System%20Library/ZPAQ1/Source%20Library/Classes/ZCL_EJEMPLO/zcl_ejemplo.clas.abap",
+  "informe": {
+    "fecha": "2026-10-29T18:27:39.083Z",
+    "versionOficial": "1.2.0",
+    "uriEditor": "abap:/repotree-v1/DEST/System%20Library/ZPAQ1/Source%20Library/Classes/ZCL_EJEMPLO/zcl_ejemplo.clas.abap",
+    "analisis": {
+      "destino": "DEST",
+      "paquetes": [
+        "System Library",
+        "ZPAQ1",
+        "Source Library",
+        "Classes",
+        "ZCL_EJEMPLO"
+      ],
+      "archivo": "zcl_ejemplo.clas.abap"
+    },
+    "nombreAff": {
+      "nombre": "zcl_ejemplo",
+      "tipo": "clas",
+      "extension": "abap"
+    },
+    "hermanos": {
+      "entradas": [
+        {
+          "nombre": "zcl_ejemplo.clas.json",
+          "tipo": "archivo"
+        },
+        {
+          "nombre": "zcl_ejemplo.clas.abap",
+          "tipo": "archivo"
+        },
+        {
+          "nombre": "zcl_ejemplo.clas.localtypes.abap",
+          "tipo": "archivo"
+        }
+      ],
+      "truncado": false,
+      "total": 3
+    },
+    "cadenaPadres": [
+      {
+        "ruta": "/repotree-v1/DEST/System Library/ZPAQ1/Source Library/Classes/ZCL_EJEMPLO",
+        "hijos": {
+          "entradas": [
+            {
+              "nombre": "zcl_ejemplo.clas.json",
+              "tipo": "archivo"
+            },
+            {
+              "nombre": "zcl_ejemplo.clas.abap",
+              "tipo": "archivo"
+            },
+            {
+              "nombre": "zcl_ejemplo.clas.localtypes.abap",
+              "tipo": "archivo"
+            }
+          ],
+          "truncado": false,
+          "total": 3
+        }
+      },
+      {
+        "ruta": "/repotree-v1/DEST/System Library/ZPAQ1/Source Library/Classes",
+        "hijos": {
+          "entradas": [
+            {
+              "nombre": "ZCL_EJEMPLO_2",
+              "tipo": "carpeta"
+            },
+            {
+              "nombre": "ZCL_EJEMPLO_3",
+              "tipo": "carpeta"
+            },
+            {
+              "nombre": "ZCL_EJEMPLO",
+              "tipo": "carpeta"
+            },
+            {
+              "nombre": "ZCL_EJEMPLO_4",
+              "tipo": "carpeta"
+            }
+          ],
+          "truncado": false,
+          "total": 4
+        }
+      },
+      {
+        "ruta": "/repotree-v1/DEST/System Library/ZPAQ1/Source Library",
+        "hijos": {
+          "entradas": [
+            {
+              "nombre": "Function Groups",
+              "tipo": "carpeta"
+            },
+            {
+              "nombre": "Interfaces",
+              "tipo": "carpeta"
+            },
+            {
+              "nombre": "Classes",
+              "tipo": "carpeta"
+            }
+          ],
+          "truncado": false,
+          "total": 3
+        }
+      },
+      {
+        "ruta": "/repotree-v1/DEST/System Library/ZPAQ1",
+        "hijos": {
+          "entradas": [
+            {
+              "nombre": "zpaq1.devck.jsonc",
+              "tipo": "archivo"
+            },
+            {
+              "nombre": "Source Library",
+              "tipo": "carpeta"
+            },
+            {
+              "nombre": "Dictionary",
+              "tipo": "carpeta"
+            },
+            {
+              "nombre": "Message Classes",
+              "tipo": "carpeta"
+            },
+            {
+              "nombre": "Connectivity",
+              "tipo": "carpeta"
+            },
+            {
+              "nombre": "Others",
+              "tipo": "carpeta"
+            }
+          ],
+          "truncado": false,
+          "total": 6
+        }
+      },
+      {
+        "ruta": "/repotree-v1/DEST/System Library",
+        "hijos": {
+          "entradas": [
+            {
+              "nombre": "(1CRMES)ES_GEN",
+              "tipo": "carpeta"
+            },
+            {
+              "nombre": "(ASU)STRUCTURE",
+              "tipo": "carpeta"
+            },
+            {
+              "nombre": "(BDL)STPI_STRUCTURE",
+              "tipo": "carpeta"
+            },
+            {
+              "nombre": "(BODS)RS_DS_FM_APPL",
+              "tipo": "carpeta"
+            },
+            {
+              "nombre": "(GBHCM)GBHCM002",
+              "tipo": "carpeta"
+            },
+            {
+              "nombre": "(GBHCM)GBHCM003",
+              "tipo": "carpeta"
+            },
+            {
+              "nombre": "(ICMTEST)CS_A",
+              "tipo": "carpeta"
+            },
+            {
+              "nombre": "(ISDFPS)MIP",
+              "tipo": "carpeta"
+            },
+            {
+              "nombre": "(IWBEP)FRAMEWORK",
+              "tipo": "carpeta"
+            },
+            {
+              "nombre": "(IWBEP)JSON_RPC",
+              "tipo": "carpeta"
+            }
+          ],
+          "truncado": true,
+          "total": 411
+        }
+      },
+      {
+        "ruta": "/repotree-v1/DEST",
+        "hijos": {
+          "entradas": [
+            {
+              "nombre": "Local Objects ($TMP)",
+              "tipo": "carpeta"
+            },
+            {
+              "nombre": "System Library",
+              "tipo": "carpeta"
+            }
+          ],
+          "truncado": false,
+          "total": 2
+        }
+      }
+    ],
+    "simbolosEstado": "ok",
+    "simbolos": [
+      {
+        "nombre": "ZCL_EJEMPLO",
+        "kind": 4,
+        "nombreKind": "Class",
+        "rango": [
+          0,
+          0,
+          124,
+          8
+        ],
+        "hijos": [
+          {
+            "nombre": "TIPO_1",
+            "kind": 6,
+            "nombreKind": "Property",
+            "rango": [
+              8,
+              0,
+              12,
+              30
+            ],
+            "hijos": [],
+            "rangoSeleccion": [
+              8,
+              11,
+              8,
+              32
+            ]
+          },
+          {
+            "nombre": "TIPO_2",
+            "kind": 6,
+            "nombreKind": "Property",
+            "rango": [
+              14,
+              0,
+              14,
+              66
+            ],
+            "hijos": [],
+            "rangoSeleccion": [
+              14,
+              0,
+              14,
+              21
+            ]
+          },
+          {
+            "nombre": "TIPO_3",
+            "kind": 6,
+            "nombreKind": "Property",
+            "rango": [
+              16,
+              0,
+              22,
+              25
+            ],
+            "hijos": [],
+            "rangoSeleccion": [
+              16,
+              12,
+              16,
+              27
+            ]
+          },
+          {
+            "nombre": "TIPO_4",
+            "kind": 6,
+            "nombreKind": "Property",
+            "rango": [
+              24,
+              0,
+              24,
+              85
+            ],
+            "hijos": [],
+            "rangoSeleccion": [
+              24,
+              9,
+              24,
+              25
+            ]
+          },
+          {
+            "nombre": "TIPO_5",
+            "kind": 6,
+            "nombreKind": "Property",
+            "rango": [
+              26,
+              0,
+              29,
+              30
+            ],
+            "hijos": [],
+            "rangoSeleccion": [
+              26,
+              11,
+              26,
+              32
+            ]
+          },
+          {
+            "nombre": "TIPO_6",
+            "kind": 6,
+            "nombreKind": "Property",
+            "rango": [
+              31,
+              0,
+              31,
+              66
+            ],
+            "hijos": [],
+            "rangoSeleccion": [
+              31,
+              0,
+              31,
+              21
+            ]
+          },
+          {
+            "nombre": "TIPO_7",
+            "kind": 6,
+            "nombreKind": "Property",
+            "rango": [
+              33,
+              0,
+              56,
+              29
+            ],
+            "hijos": [],
+            "rangoSeleccion": [
+              33,
+              11,
+              33,
+              31
+            ]
+          },
+          {
+            "nombre": "TIPO_8",
+            "kind": 6,
+            "nombreKind": "Property",
+            "rango": [
+              58,
+              0,
+              58,
+              64
+            ],
+            "hijos": [],
+            "rangoSeleccion": [
+              58,
+              0,
+              58,
+              20
+            ]
+          },
+          {
+            "nombre": "TIPO_9",
+            "kind": 6,
+            "nombreKind": "Property",
+            "rango": [
+              60,
+              0,
+              71,
+              34
+            ],
+            "hijos": [],
+            "rangoSeleccion": [
+              60,
+              11,
+              60,
+              36
+            ]
+          },
+          {
+            "nombre": "TIPO_10",
+            "kind": 6,
+            "nombreKind": "Property",
+            "rango": [
+              73,
+              0,
+              73,
+              74
+            ],
+            "hijos": [],
+            "rangoSeleccion": [
+              73,
+              0,
+              73,
+              25
+            ]
+          },
+          {
+            "nombre": "TIPO_11",
+            "kind": 6,
+            "nombreKind": "Property",
+            "rango": [
+              75,
+              0,
+              83,
+              35
+            ],
+            "hijos": [],
+            "rangoSeleccion": [
+              75,
+              11,
+              75,
+              37
+            ]
+          },
+          {
+            "nombre": "TIPO_12",
+            "kind": 6,
+            "nombreKind": "Property",
+            "rango": [
+              85,
+              0,
+              85,
+              76
+            ],
+            "hijos": [],
+            "rangoSeleccion": [
+              85,
+              0,
+              85,
+              26
+            ]
+          },
+          {
+            "nombre": "CONST_1",
+            "kind": 13,
+            "nombreKind": "Constant",
+            "rango": [
+              87,
+              2,
+              87,
+              127
+            ],
+            "hijos": [],
+            "rangoSeleccion": [
+              87,
+              12,
+              87,
+              33
+            ]
+          },
+          {
+            "nombre": "CONST_2",
+            "kind": 13,
+            "nombreKind": "Constant",
+            "rango": [
+              88,
+              2,
+              88,
+              127
+            ],
+            "hijos": [],
+            "rangoSeleccion": [
+              88,
+              12,
+              88,
+              33
+            ]
+          },
+          {
+            "nombre": "CONST_3",
+            "kind": 13,
+            "nombreKind": "Constant",
+            "rango": [
+              89,
+              2,
+              89,
+              125
+            ],
+            "hijos": [],
+            "rangoSeleccion": [
+              89,
+              12,
+              89,
+              32
+            ]
+          },
+          {
+            "nombre": "CONST_4",
+            "kind": 13,
+            "nombreKind": "Constant",
+            "rango": [
+              90,
+              2,
+              90,
+              135
+            ],
+            "hijos": [],
+            "rangoSeleccion": [
+              90,
+              12,
+              90,
+              37
+            ]
+          },
+          {
+            "nombre": "CONST_5",
+            "kind": 13,
+            "nombreKind": "Constant",
+            "rango": [
+              91,
+              2,
+              91,
+              137
+            ],
+            "hijos": [],
+            "rangoSeleccion": [
+              91,
+              12,
+              91,
+              38
+            ]
+          },
+          {
+            "nombre": "CONST_6",
+            "kind": 13,
+            "nombreKind": "Constant",
+            "rango": [
+              107,
+              2,
+              107,
+              87
+            ],
+            "hijos": [],
+            "rangoSeleccion": [
+              107,
+              12,
+              107,
+              24
+            ]
+          }
+        ],
+        "rangoSeleccion": [
+          0,
+          0,
+          124,
+          8
+        ]
+      },
+      {
+        "nombre": "ZCL_EJEMPLO",
+        "kind": 4,
+        "nombreKind": "Class",
+        "rango": [
+          128,
+          0,
+          891,
+          8
+        ],
+        "hijos": [
+          {
+            "nombre": "METODO_1",
+            "kind": 5,
+            "nombreKind": "Method",
+            "rango": [
+              788,
+              2,
+              890,
+              12
+            ],
+            "hijos": [],
+            "rangoSeleccion": [
+              788,
+              9,
+              788,
+              27
+            ]
+          },
+          {
+            "nombre": "METODO_2",
+            "kind": 5,
+            "nombreKind": "Method",
+            "rango": [
+              131,
+              2,
+              148,
+              12
+            ],
+            "hijos": [],
+            "rangoSeleccion": [
+              131,
+              9,
+              131,
+              15
+            ]
+          },
+          {
+            "nombre": "METODO_3",
+            "kind": 5,
+            "nombreKind": "Method",
+            "rango": [
+              770,
+              2,
+              785,
+              12
+            ],
+            "hijos": [],
+            "rangoSeleccion": [
+              770,
+              9,
+              770,
+              26
+            ]
+          },
+          {
+            "nombre": "METODO_4",
+            "kind": 5,
+            "nombreKind": "Method",
+            "rango": [
+              151,
+              2,
+              224,
+              12
+            ],
+            "hijos": [],
+            "rangoSeleccion": [
+              151,
+              9,
+              151,
+              34
+            ]
+          },
+          {
+            "nombre": "METODO_5",
+            "kind": 5,
+            "nombreKind": "Method",
+            "rango": [
+              227,
+              2,
+              289,
+              12
+            ],
+            "hijos": [],
+            "rangoSeleccion": [
+              227,
+              9,
+              227,
+              34
+            ]
+          },
+          {
+            "nombre": "METODO_6",
+            "kind": 5,
+            "nombreKind": "Method",
+            "rango": [
+              292,
+              2,
+              525,
+              12
+            ],
+            "hijos": [],
+            "rangoSeleccion": [
+              292,
+              9,
+              292,
+              33
+            ]
+          },
+          {
+            "nombre": "METODO_7",
+            "kind": 5,
+            "nombreKind": "Method",
+            "rango": [
+              528,
+              2,
+              658,
+              12
+            ],
+            "hijos": [],
+            "rangoSeleccion": [
+              528,
+              9,
+              528,
+              38
+            ]
+          },
+          {
+            "nombre": "METODO_8",
+            "kind": 5,
+            "nombreKind": "Method",
+            "rango": [
+              661,
+              2,
+              767,
+              12
+            ],
+            "hijos": [],
+            "rangoSeleccion": [
+              661,
+              9,
+              661,
+              39
+            ]
+          }
+        ],
+        "rangoSeleccion": [
+          128,
+          0,
+          891,
+          8
+        ]
+      }
+    ],
+    "checkObject": {
+      "ok": true,
+      "resultadoTipo": "undefined",
+      "uriActivaAlLlamar": "abap:/repotree-v1/DEST/System%20Library/ZPAQ1/Source%20Library/Classes/ZCL_EJEMPLO/zcl_ejemplo.clas.abap"
+    }
+  }
+}

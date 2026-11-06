@@ -1,0 +1,1395 @@
+{
+  "name": "sextante",
+  "displayName": "Sextante",
+  "description": "Navegación tipo SE80 dentro de VS Code sobre ABAP Development Tools: sistemas, búsqueda de objetos, árbol del objeto, acciones y diccionario en contexto.",
+  "publisher": "lenny",
+  "version": "0.1.0",
+  "preview": true,
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lenny8a/sextante.git"
+  },
+  "homepage": "https://github.com/lenny8a/sextante#readme",
+  "bugs": {
+    "url": "https://github.com/lenny8a/sextante/issues"
+  },
+  "icon": "media/sextante.png",
+  "galleryBanner": {
+    "color": "#282c34",
+    "theme": "dark"
+  },
+  "engines": {
+    "vscode": "^1.100.0"
+  },
+  "categories": [
+    "Programming Languages",
+    "Other"
+  ],
+  "keywords": [
+    "ABAP",
+    "SAP",
+    "ADT",
+    "S/4HANA",
+    "SE80"
+  ],
+  "activationEvents": [
+    "onFileSystem:abap",
+    "onFileSystem:abap-navigator-bloque",
+    "onStartupFinished"
+  ],
+  "main": "./out/src/extension.js",
+  "contributes": {
+    "themes": [
+      {
+        "label": "Sextante Oscuro",
+        "uiTheme": "vs-dark",
+        "path": "./themes/sextante-oscuro-color-theme.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "abap-sql",
+        "scopeName": "source.abap-sql",
+        "path": "./syntaxes/abap-sql.tmLanguage.json"
+      },
+      {
+        "language": "abap",
+        "scopeName": "source.abap",
+        "path": "./syntaxes/abap.tmLanguage.json"
+      }
+    ],
+    "commands": [
+      {
+        "command": "abapNavigator.sistemas.refrescar",
+        "title": "Refrescar sistemas",
+        "category": "Sextante",
+        "icon": "$(refresh)"
+      },
+      {
+        "command": "abapNavigator.sistemas.conectar",
+        "title": "Conectar",
+        "category": "Sextante",
+        "icon": "$(plug)"
+      },
+      {
+        "command": "abapNavigator.sistemas.marcarActivo",
+        "title": "Marcar como sistema activo",
+        "category": "Sextante",
+        "icon": "$(star)"
+      },
+      {
+        "command": "abapNavigator.sistemas.cambiarRol",
+        "title": "Cambiar rol",
+        "category": "Sextante",
+        "icon": "$(tag)"
+      },
+      {
+        "command": "abapNavigator.sistemas.copiarId",
+        "title": "Copiar id",
+        "category": "Sextante",
+        "icon": "$(copy)"
+      },
+      {
+        "command": "abapNavigator.sistemas.nuevo",
+        "title": "Nuevo sistema",
+        "category": "Sextante",
+        "icon": "$(add)"
+      },
+      {
+        "command": "abapNavigator.sistemas.editarDestinos",
+        "title": "Editar destinos",
+        "category": "Sextante",
+        "icon": "$(edit)"
+      },
+      {
+        "command": "abapNavigator.objeto.abrir",
+        "title": "Abrir objeto por URI",
+        "category": "Sextante",
+        "icon": "$(go-to-file)"
+      },
+      {
+        "command": "abapNavigator.objeto.ir",
+        "title": "Ir al elemento",
+        "category": "Sextante",
+        "icon": "$(go-to-file)"
+      },
+      {
+        "command": "abapNavigator.objeto.refrescar",
+        "title": "Refrescar objeto",
+        "category": "Sextante",
+        "icon": "$(refresh)"
+      },
+      {
+        "command": "abapNavigator.objeto.fijar",
+        "title": "Fijar objeto",
+        "category": "Sextante",
+        "icon": "$(pin)"
+      },
+      {
+        "command": "abapNavigator.objeto.soltar",
+        "title": "Soltar objeto",
+        "category": "Sextante",
+        "icon": "$(pinned)"
+      },
+      {
+        "command": "abapNavigator.objeto.diario",
+        "title": "Abrir diario del objeto",
+        "category": "Sextante",
+        "icon": "$(note)"
+      },
+      {
+        "command": "abapNavigator.objeto.modoBloque.activar",
+        "title": "Abrir métodos como bloque",
+        "category": "Sextante",
+        "icon": "$(symbol-method)"
+      },
+      {
+        "command": "abapNavigator.objeto.modoBloque.desactivar",
+        "title": "Abrir métodos en la clase completa",
+        "category": "Sextante",
+        "icon": "$(symbol-class)"
+      },
+      {
+        "command": "abapNavigator.objeto.buscarOficial",
+        "title": "Buscar objeto (extensión oficial)",
+        "category": "Sextante",
+        "icon": "$(search)"
+      },
+      {
+        "command": "abapNavigator.buscar",
+        "title": "Buscar objeto",
+        "category": "Sextante",
+        "icon": "$(search)"
+      },
+      {
+        "command": "abapNavigator.buscar.olvidar",
+        "title": "Olvidar contraseña y URL de búsqueda",
+        "category": "Sextante",
+        "icon": "$(key)"
+      },
+      {
+        "command": "abapNavigator.tema.coloresPropios",
+        "title": "Colores propios para ABAP (activar/desactivar)",
+        "category": "Sextante"
+      },
+      {
+        "command": "abapNavigator.objeto.activar",
+        "title": "Activar",
+        "category": "Sextante",
+        "icon": "$(zap)"
+      },
+      {
+        "command": "abapNavigator.objeto.activarTodo",
+        "title": "Activar todo…",
+        "category": "Sextante",
+        "icon": "$(run-all)"
+      },
+      {
+        "command": "abapNavigator.objeto.ordenes",
+        "title": "Orden del objeto",
+        "category": "Sextante",
+        "icon": "$(package)"
+      },
+      {
+        "command": "abapNavigator.objeto.compararOtroSistema",
+        "title": "Comparar con otro sistema",
+        "category": "Sextante",
+        "icon": "$(diff)"
+      },
+      {
+        "command": "abapNavigator.objeto.compararConfigurar",
+        "title": "Comparar con otro sistema: elegir sistemas…",
+        "category": "Sextante"
+      },
+      {
+        "command": "abapNavigator.objeto.verificar",
+        "title": "Verificar sintaxis",
+        "category": "Sextante",
+        "icon": "$(check)"
+      },
+      {
+        "command": "abapNavigator.objeto.atc",
+        "title": "ATC",
+        "category": "Sextante",
+        "icon": "$(checklist)"
+      },
+      {
+        "command": "abapNavigator.objeto.unitTests",
+        "title": "Unit tests",
+        "category": "Sextante",
+        "icon": "$(beaker)"
+      },
+      {
+        "command": "abapNavigator.objeto.compararUltima",
+        "title": "Comparar con la última versión",
+        "category": "Sextante",
+        "icon": "$(history)"
+      },
+      {
+        "command": "abapNavigator.objeto.transporte",
+        "title": "Transporte",
+        "category": "Sextante",
+        "icon": "$(package)"
+      },
+      {
+        "command": "abapNavigator.objeto.copiarNombre",
+        "title": "Copiar nombre",
+        "category": "Sextante",
+        "icon": "$(copy)"
+      },
+      {
+        "command": "abapNavigator.objeto.ejecutar",
+        "title": "Ejecutar",
+        "category": "Sextante",
+        "icon": "$(play)"
+      },
+      {
+        "command": "abapNavigator.objeto.documentacion",
+        "title": "Documentación",
+        "category": "Sextante",
+        "icon": "$(book)"
+      },
+      {
+        "command": "abapNavigator.objeto.versiones",
+        "title": "Historial de versiones",
+        "category": "Sextante",
+        "icon": "$(history)"
+      },
+      {
+        "command": "abapNavigator.buscarTexto",
+        "title": "Buscar texto en ABAP",
+        "category": "Sextante",
+        "icon": "$(regex)"
+      },
+      {
+        "command": "abapNavigator.dumps",
+        "title": "Dumps y feeds",
+        "category": "Sextante",
+        "icon": "$(flame)"
+      },
+      {
+        "command": "abapNavigator.sql.consola",
+        "title": "Consola SQL",
+        "category": "Sextante",
+        "icon": "$(notebook)"
+      },
+      {
+        "command": "abapNavigator.sql.verDatos",
+        "title": "Ver datos",
+        "category": "Sextante",
+        "icon": "$(table)"
+      },
+      {
+        "command": "abapNavigator.paquetes.verDatos",
+        "title": "Ver datos",
+        "category": "Sextante",
+        "icon": "$(table)"
+      },
+      {
+        "command": "abapNavigator.crearObjeto",
+        "title": "Nuevo objeto ABAP…",
+        "category": "Sextante",
+        "icon": "$(add)"
+      },
+      {
+        "command": "abapNavigator.paquetes.refrescar",
+        "title": "Refrescar paquetes",
+        "category": "Sextante",
+        "icon": "$(refresh)"
+      },
+      {
+        "command": "abapNavigator.paquetes.abrir",
+        "title": "Abrir",
+        "category": "Sextante",
+        "icon": "$(go-to-file)"
+      },
+      {
+        "command": "abapNavigator.paquetes.ir",
+        "title": "Ir a paquete",
+        "category": "Sextante",
+        "icon": "$(symbol-namespace)"
+      },
+      {
+        "command": "abapNavigator.paquetes.conectar",
+        "title": "Conectar al sistema activo",
+        "category": "Sextante",
+        "icon": "$(plug)"
+      },
+      {
+        "command": "abapNavigator.diccionario.abrir",
+        "title": "Abrir en el panel Diccionario",
+        "category": "Sextante",
+        "icon": "$(book)"
+      },
+      {
+        "command": "abapNavigator.diccionario.fijar",
+        "title": "Fijar diccionario",
+        "category": "Sextante",
+        "icon": "$(pin)"
+      },
+      {
+        "command": "abapNavigator.diccionario.soltar",
+        "title": "Soltar diccionario",
+        "category": "Sextante",
+        "icon": "$(pinned)"
+      },
+      {
+        "command": "abapNavigator.diccionario.refrescar",
+        "title": "Refrescar diccionario",
+        "category": "Sextante",
+        "icon": "$(refresh)"
+      },
+      {
+        "command": "abapNavigator.diccionario.copiarNombre",
+        "title": "Copiar nombre",
+        "category": "Sextante",
+        "icon": "$(copy)"
+      },
+      {
+        "command": "abapNavigator.diccionario.abrirDdl",
+        "title": "Abrir definición",
+        "category": "Sextante",
+        "icon": "$(go-to-file)"
+      },
+      {
+        "command": "abapNavigator.diccionario.conectar",
+        "title": "Conectar para ver el diccionario",
+        "category": "Sextante",
+        "icon": "$(plug)"
+      },
+      {
+        "command": "abapNavigator.diccionario.verDatos",
+        "title": "Ver datos",
+        "category": "Sextante",
+        "icon": "$(table)"
+      },
+      {
+        "command": "abapNavigator.diccionario.masDatos",
+        "title": "Cargar más filas",
+        "category": "Sextante",
+        "icon": "$(fold-down)"
+      },
+      {
+        "command": "abapNavigator.diccionario.ocultarDatos",
+        "title": "Ocultar datos",
+        "category": "Sextante",
+        "icon": "$(close)"
+      },
+      {
+        "command": "abapNavigator.diccionario.dondeSeUsa",
+        "title": "Dónde se usa",
+        "category": "Sextante",
+        "icon": "$(references)"
+      },
+      {
+        "command": "abapNavigator.diccionario.ocultarUsos",
+        "title": "Ocultar dónde se usa",
+        "category": "Sextante",
+        "icon": "$(close)"
+      },
+      {
+        "command": "abapNavigator.diccionario.anadirPrefijoPropio",
+        "title": "Añadir a prefijos propios",
+        "category": "Sextante",
+        "icon": "$(add)"
+      },
+      {
+        "command": "abapNavigator.diccionario.abrirUso",
+        "title": "Abrir objeto",
+        "category": "Sextante",
+        "icon": "$(go-to-file)"
+      },
+      {
+        "command": "abapNavigator.diccionario.generarTypes",
+        "title": "Generar TYPES",
+        "category": "Sextante"
+      },
+      {
+        "command": "abapNavigator.diccionario.generarSelect",
+        "title": "Generar SELECT",
+        "category": "Sextante"
+      },
+      {
+        "command": "abapNavigator.diccionario.generarData",
+        "title": "Generar DATA (estructura)",
+        "category": "Sextante"
+      },
+      {
+        "command": "abapNavigator.diccionario.generarTablaInterna",
+        "title": "Generar DATA (tabla interna)",
+        "category": "Sextante"
+      },
+      {
+        "command": "abapNavigator.diccionario.generarCase",
+        "title": "Generar CASE",
+        "category": "Sextante"
+      },
+      {
+        "command": "abapNavigator.firmas.insertarLlamada",
+        "title": "Sextante: Insertar llamada…",
+        "icon": "$(symbol-method)"
+      },
+      {
+        "command": "abapNavigator.firmas.abrir",
+        "title": "Abrir la definición de la firma",
+        "category": "Sextante"
+      },
+      {
+        "command": "abapNavigator.ordenes.refrescar",
+        "title": "Refrescar órdenes",
+        "category": "Sextante",
+        "icon": "$(refresh)"
+      },
+      {
+        "command": "abapNavigator.ordenes.organizadorOficial",
+        "title": "Organizador de transportes de la oficial",
+        "category": "Sextante",
+        "icon": "$(package)"
+      },
+      {
+        "command": "abapNavigator.ordenes.copiarNumero",
+        "title": "Copiar número",
+        "category": "Sextante"
+      },
+      {
+        "command": "abapNavigator.ordenes.abrirObjeto",
+        "title": "Abrir objeto",
+        "category": "Sextante"
+      },
+      {
+        "command": "abapNavigator.ordenes.conectar",
+        "title": "Conectar",
+        "category": "Sextante"
+      },
+      {
+        "command": "abapNavigator.versiones.refrescar",
+        "title": "Refrescar versiones",
+        "category": "Sextante",
+        "icon": "$(refresh)"
+      },
+      {
+        "command": "abapNavigator.versiones.compararSeleccion",
+        "title": "Comparar seleccionadas",
+        "category": "Sextante",
+        "icon": "$(diff)"
+      },
+      {
+        "command": "abapNavigator.versiones.lineaDeTiempoOficial",
+        "title": "Línea de tiempo de la oficial",
+        "category": "Sextante",
+        "icon": "$(history)"
+      },
+      {
+        "command": "abapNavigator.versiones.abrirDiff",
+        "title": "Comparar con el editor",
+        "category": "Sextante"
+      },
+      {
+        "command": "abapNavigator.versiones.abrirVersion",
+        "title": "Abrir versión",
+        "category": "Sextante"
+      },
+      {
+        "command": "abapNavigator.versiones.copiarOrden",
+        "title": "Copiar número de orden",
+        "category": "Sextante"
+      },
+      {
+        "command": "abapNavigator.monitor.refrescar",
+        "title": "Refrescar monitor",
+        "category": "Sextante",
+        "icon": "$(refresh)"
+      },
+      {
+        "command": "abapNavigator.monitor.conectar",
+        "title": "Conectar al sistema (monitor)",
+        "category": "Sextante"
+      },
+      {
+        "command": "abapNavigator.monitor.abrirDump",
+        "title": "Abrir dump",
+        "category": "Sextante"
+      },
+      {
+        "command": "abapNavigator.monitor.abrirInactivo",
+        "title": "Abrir objeto inactivo",
+        "category": "Sextante"
+      },
+      {
+        "command": "abapNavigator.monitor.abrirObjetoOrden",
+        "title": "Abrir objeto de la orden",
+        "category": "Sextante"
+      },
+      {
+        "command": "abapNavigator.monitor.masDumps",
+        "title": "Más dumps",
+        "category": "Sextante"
+      },
+      {
+        "command": "abapNavigator.monitor.dumpsTodos",
+        "title": "Ver dumps de todos",
+        "category": "Sextante",
+        "icon": "$(organization)"
+      },
+      {
+        "command": "abapNavigator.monitor.dumpsMios",
+        "title": "Ver solo mis dumps",
+        "category": "Sextante",
+        "icon": "$(account)"
+      },
+      {
+        "command": "abapNavigator.monitor.inactivosTodos",
+        "title": "Ver inactivos de todos",
+        "category": "Sextante",
+        "icon": "$(organization)"
+      },
+      {
+        "command": "abapNavigator.monitor.inactivosMios",
+        "title": "Ver solo mis inactivos",
+        "category": "Sextante",
+        "icon": "$(account)"
+      },
+      {
+        "command": "abapNavigator.monitor.activarTodo",
+        "title": "Activar todo lo mío",
+        "category": "Sextante",
+        "icon": "$(zap)"
+      },
+      {
+        "command": "abapNavigator.monitor.copiarNombre",
+        "title": "Copiar nombre",
+        "category": "Sextante"
+      },
+      {
+        "command": "abapNavigator.monitor.abrirPosicion",
+        "title": "Abrir posición del dump",
+        "category": "Sextante"
+      },
+      {
+        "command": "abapNavigator.ia.arrancar",
+        "title": "Arrancar servidor del agente",
+        "category": "Sextante",
+        "icon": "$(play)"
+      },
+      {
+        "command": "abapNavigator.ia.parar",
+        "title": "Parar servidor del agente",
+        "category": "Sextante",
+        "icon": "$(debug-stop)"
+      },
+      {
+        "command": "abapNavigator.ia.conectarAgente",
+        "title": "Conectar el agente (Claude Code)",
+        "category": "Sextante",
+        "icon": "$(plug)"
+      },
+      {
+        "command": "abapNavigator.ia.copiarConfiguracion",
+        "title": "Copiar configuración MCP",
+        "category": "Sextante"
+      },
+      {
+        "command": "abapNavigator.ia.regenerarToken",
+        "title": "Regenerar token del agente",
+        "category": "Sextante"
+      },
+      {
+        "command": "abapNavigator.ia.abrirLlamada",
+        "title": "Abrir llamada del agente",
+        "category": "Sextante"
+      },
+      {
+        "command": "abapNavigator.ia.aplicarPropuesta",
+        "title": "Aplicar cambio",
+        "category": "Sextante",
+        "icon": "$(check)"
+      },
+      {
+        "command": "abapNavigator.ia.rechazarPropuesta",
+        "title": "Rechazar",
+        "category": "Sextante",
+        "icon": "$(close)"
+      },
+      {
+        "command": "abapNavigator.ia.abrirPropuesta",
+        "title": "Abrir propuesta del agente",
+        "category": "Sextante"
+      }
+    ],
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "abapNavigator",
+          "title": "Sextante",
+          "icon": "media/sextante.svg"
+        }
+      ]
+    },
+    "views": {
+      "abapNavigator": [
+        {
+          "id": "abapNavigator.sistemas",
+          "name": "Sistemas"
+        },
+        {
+          "id": "abapNavigator.acciones",
+          "name": "Acciones"
+        },
+        {
+          "id": "abapNavigator.objeto",
+          "name": "Objeto"
+        },
+        {
+          "id": "abapNavigator.versiones",
+          "name": "Versiones",
+          "visibility": "collapsed"
+        },
+        {
+          "id": "abapNavigator.ordenes",
+          "name": "Órdenes",
+          "visibility": "collapsed"
+        },
+        {
+          "id": "abapNavigator.diccionario",
+          "name": "Diccionario"
+        },
+        {
+          "id": "abapNavigator.paquetes",
+          "name": "Paquetes"
+        },
+        {
+          "id": "abapNavigator.monitor",
+          "name": "Monitor"
+        },
+        {
+          "id": "abapNavigator.ia",
+          "name": "Actividad de la IA",
+          "visibility": "collapsed"
+        }
+      ]
+    },
+    "menus": {
+      "view/title": [
+        {
+          "command": "abapNavigator.sistemas.refrescar",
+          "when": "view == abapNavigator.sistemas",
+          "group": "navigation@0"
+        },
+        {
+          "command": "abapNavigator.sistemas.nuevo",
+          "when": "view == abapNavigator.sistemas",
+          "group": "navigation@1"
+        },
+        {
+          "command": "abapNavigator.sistemas.editarDestinos",
+          "when": "view == abapNavigator.sistemas",
+          "group": "navigation@2"
+        },
+        {
+          "command": "abapNavigator.objeto.refrescar",
+          "when": "view == abapNavigator.objeto",
+          "group": "navigation@90"
+        },
+        {
+          "command": "abapNavigator.objeto.fijar",
+          "when": "view == abapNavigator.objeto && !abapNavigator.objetoFijado",
+          "group": "navigation@91"
+        },
+        {
+          "command": "abapNavigator.objeto.soltar",
+          "when": "view == abapNavigator.objeto && abapNavigator.objetoFijado",
+          "group": "navigation@92"
+        },
+        {
+          "command": "abapNavigator.objeto.modoBloque.activar",
+          "when": "view == abapNavigator.objeto && !abapNavigator.objetoModoBloque",
+          "group": "navigation@93"
+        },
+        {
+          "command": "abapNavigator.objeto.modoBloque.desactivar",
+          "when": "view == abapNavigator.objeto && abapNavigator.objetoModoBloque",
+          "group": "navigation@94"
+        },
+        {
+          "command": "abapNavigator.objeto.diario",
+          "when": "view == abapNavigator.objeto && abapNavigator.objetoAbierto",
+          "group": "navigation@95"
+        },
+        {
+          "command": "abapNavigator.buscar",
+          "when": "view == abapNavigator.objeto",
+          "group": "navigation@0"
+        },
+        {
+          "command": "abapNavigator.buscar",
+          "when": "view == abapNavigator.paquetes",
+          "group": "navigation@0"
+        },
+        {
+          "command": "abapNavigator.paquetes.ir",
+          "when": "view == abapNavigator.paquetes",
+          "group": "navigation@0"
+        },
+        {
+          "command": "abapNavigator.sql.consola",
+          "when": "view == abapNavigator.objeto",
+          "group": "navigation@1"
+        },
+        {
+          "command": "abapNavigator.sql.consola",
+          "when": "view == abapNavigator.paquetes",
+          "group": "navigation@1"
+        },
+        {
+          "command": "abapNavigator.sql.verDatos",
+          "when": "view == abapNavigator.objeto && abapNavigator.objetoTipo == tabla",
+          "group": "navigation@2"
+        },
+        {
+          "command": "abapNavigator.paquetes.refrescar",
+          "when": "view == abapNavigator.paquetes",
+          "group": "navigation@1"
+        },
+        {
+          "command": "abapNavigator.crearObjeto",
+          "when": "view == abapNavigator.paquetes",
+          "group": "navigation@0"
+        },
+        {
+          "command": "abapNavigator.diccionario.refrescar",
+          "when": "view == abapNavigator.diccionario",
+          "group": "navigation@0"
+        },
+        {
+          "command": "abapNavigator.diccionario.fijar",
+          "when": "view == abapNavigator.diccionario && !abapNavigator.diccionario.fijado",
+          "group": "navigation@1"
+        },
+        {
+          "command": "abapNavigator.diccionario.soltar",
+          "when": "view == abapNavigator.diccionario && abapNavigator.diccionario.fijado",
+          "group": "navigation@1"
+        },
+        {
+          "command": "abapNavigator.ordenes.refrescar",
+          "when": "view == abapNavigator.ordenes",
+          "group": "navigation@0"
+        },
+        {
+          "command": "abapNavigator.ordenes.organizadorOficial",
+          "when": "view == abapNavigator.ordenes",
+          "group": "navigation@1"
+        },
+        {
+          "command": "abapNavigator.versiones.refrescar",
+          "when": "view == abapNavigator.versiones",
+          "group": "navigation@0"
+        },
+        {
+          "command": "abapNavigator.versiones.compararSeleccion",
+          "when": "view == abapNavigator.versiones",
+          "group": "navigation@1"
+        },
+        {
+          "command": "abapNavigator.versiones.lineaDeTiempoOficial",
+          "when": "view == abapNavigator.versiones",
+          "group": "navigation@2"
+        },
+        {
+          "command": "abapNavigator.monitor.refrescar",
+          "when": "view == abapNavigator.monitor",
+          "group": "navigation@0"
+        },
+        {
+          "command": "abapNavigator.monitor.activarTodo",
+          "when": "view == abapNavigator.monitor && abapNavigator.monitor.escribible",
+          "group": "navigation@1"
+        },
+        {
+          "command": "abapNavigator.ia.arrancar",
+          "when": "view == abapNavigator.ia",
+          "group": "navigation@1"
+        },
+        {
+          "command": "abapNavigator.ia.parar",
+          "when": "view == abapNavigator.ia",
+          "group": "navigation@2"
+        },
+        {
+          "command": "abapNavigator.ia.conectarAgente",
+          "when": "view == abapNavigator.ia",
+          "group": "navigation@3"
+        }
+      ],
+      "editor/title": [
+        {
+          "command": "abapNavigator.objeto.verificar",
+          "when": "resourceScheme == abap && resourceExtname == .abap && abapNavigator.objetoAbierto",
+          "group": "navigation@0"
+        },
+        {
+          "command": "abapNavigator.objeto.atc",
+          "when": "resourceScheme == abap && resourceExtname == .abap && abapNavigator.objetoAbierto",
+          "group": "navigation@1"
+        },
+        {
+          "command": "abapNavigator.objeto.unitTests",
+          "when": "resourceScheme == abap && resourceExtname == .abap && abapNavigator.objetoAbierto",
+          "group": "navigation@2"
+        },
+        {
+          "command": "abapNavigator.objeto.activar",
+          "when": "resourceScheme == abap && resourceExtname == .abap && abapNavigator.objetoAbierto && !abapNavigator.objetoProtegido",
+          "group": "navigation@3"
+        },
+        {
+          "command": "abapNavigator.objeto.activarTodo",
+          "when": "resourceScheme == abap && resourceExtname == .abap && abapNavigator.objetoAbierto && !abapNavigator.objetoProtegido",
+          "group": "navigation@4"
+        },
+        {
+          "command": "abapNavigator.objeto.ejecutar",
+          "when": "resourceScheme == abap && resourceExtname == .abap && abapNavigator.objetoAbierto && abapNavigator.objetoTipo == programa",
+          "group": "navigation@5"
+        },
+        {
+          "command": "abapNavigator.objeto.verificar",
+          "when": "resourceScheme == abap-navigator-bloque && abapNavigator.objetoAbierto",
+          "group": "navigation@0"
+        },
+        {
+          "command": "abapNavigator.objeto.atc",
+          "when": "resourceScheme == abap-navigator-bloque && abapNavigator.objetoAbierto",
+          "group": "navigation@1"
+        },
+        {
+          "command": "abapNavigator.objeto.unitTests",
+          "when": "resourceScheme == abap-navigator-bloque && abapNavigator.objetoAbierto",
+          "group": "navigation@2"
+        },
+        {
+          "command": "abapNavigator.objeto.activar",
+          "when": "resourceScheme == abap-navigator-bloque && abapNavigator.objetoAbierto && !abapNavigator.objetoProtegido",
+          "group": "navigation@3"
+        },
+        {
+          "command": "abapNavigator.objeto.activarTodo",
+          "when": "resourceScheme == abap-navigator-bloque && abapNavigator.objetoAbierto && !abapNavigator.objetoProtegido",
+          "group": "navigation@4"
+        },
+        {
+          "command": "abapNavigator.ia.aplicarPropuesta",
+          "when": "resourceScheme == sextante-propuesta",
+          "group": "navigation@0"
+        },
+        {
+          "command": "abapNavigator.ia.rechazarPropuesta",
+          "when": "resourceScheme == sextante-propuesta",
+          "group": "navigation@1"
+        }
+      ],
+      "view/item/context": [
+        {
+          "command": "abapNavigator.crearObjeto",
+          "when": "view == abapNavigator.paquetes && viewItem =~ /^(biblioteca|paquete|categoria|tipo|objeto)/",
+          "group": "1_crear@0"
+        },
+        {
+          "command": "abapNavigator.crearObjeto",
+          "when": "view == abapNavigator.objeto && viewItem == raiz",
+          "group": "1_crear@0"
+        },
+        {
+          "command": "abapNavigator.paquetes.verDatos",
+          "when": "view == abapNavigator.paquetes && viewItem == objeto.tabla",
+          "group": "inline"
+        },
+        {
+          "command": "abapNavigator.sistemas.conectar",
+          "when": "view == abapNavigator.sistemas && viewItem =~ /^sistema(Activo)?$/",
+          "group": "inline"
+        },
+        {
+          "command": "abapNavigator.sistemas.marcarActivo",
+          "when": "view == abapNavigator.sistemas && viewItem == sistema",
+          "group": "1_sistema@0"
+        },
+        {
+          "command": "abapNavigator.sistemas.cambiarRol",
+          "when": "view == abapNavigator.sistemas && viewItem =~ /^sistema/",
+          "group": "1_sistema@1"
+        },
+        {
+          "command": "abapNavigator.sistemas.copiarId",
+          "when": "view == abapNavigator.sistemas && viewItem =~ /^sistema/",
+          "group": "1_sistema@2"
+        },
+        {
+          "command": "abapNavigator.buscar.olvidar",
+          "when": "view == abapNavigator.sistemas && viewItem =~ /^sistema/",
+          "group": "2_busqueda@0"
+        },
+        {
+          "command": "abapNavigator.diccionario.abrirDdl",
+          "when": "view == abapNavigator.diccionario && viewItem == cabecera",
+          "group": "inline@0"
+        },
+        {
+          "command": "abapNavigator.diccionario.copiarNombre",
+          "when": "view == abapNavigator.diccionario && viewItem =~ /^(cabecera|include|campo|campoConValores|elemento|dominio|dominioConValores|valor)$/",
+          "group": "inline@1"
+        },
+        {
+          "command": "abapNavigator.diccionario.verDatos",
+          "when": "view == abapNavigator.diccionario && viewItem == cabecera && abapNavigator.diccionario.esTabla",
+          "group": "inline@2"
+        },
+        {
+          "command": "abapNavigator.diccionario.verDatos",
+          "when": "view == abapNavigator.diccionario && viewItem =~ /^(cabecera|grupoCampos)$/ && abapNavigator.diccionario.esTabla",
+          "group": "1_datos@0"
+        },
+        {
+          "command": "abapNavigator.diccionario.masDatos",
+          "when": "view == abapNavigator.diccionario && viewItem == grupoDatos && abapNavigator.diccionario.esTabla",
+          "group": "inline@0"
+        },
+        {
+          "command": "abapNavigator.diccionario.ocultarDatos",
+          "when": "view == abapNavigator.diccionario && viewItem == grupoDatos && abapNavigator.diccionario.esTabla",
+          "group": "inline@1"
+        },
+        {
+          "command": "abapNavigator.diccionario.dondeSeUsa",
+          "when": "view == abapNavigator.diccionario && viewItem == cabecera",
+          "group": "inline@3"
+        },
+        {
+          "command": "abapNavigator.diccionario.dondeSeUsa",
+          "when": "view == abapNavigator.diccionario && viewItem == cabecera",
+          "group": "2_usos@0"
+        },
+        {
+          "command": "abapNavigator.diccionario.ocultarUsos",
+          "when": "view == abapNavigator.diccionario && viewItem == grupoUsos",
+          "group": "inline@0"
+        },
+        {
+          "command": "abapNavigator.diccionario.abrirUso",
+          "when": "view == abapNavigator.diccionario && viewItem == uso",
+          "group": "inline@0"
+        },
+        {
+          "command": "abapNavigator.diccionario.generarTypes",
+          "when": "view == abapNavigator.diccionario && viewItem =~ /^(cabecera|grupoCampos|include|campo|campoConValores)$/ && abapNavigator.diccionario.conCampos",
+          "group": "3_generar@0"
+        },
+        {
+          "command": "abapNavigator.diccionario.generarSelect",
+          "when": "view == abapNavigator.diccionario && viewItem =~ /^(cabecera|grupoCampos|include|campo|campoConValores)$/ && abapNavigator.diccionario.esTabla",
+          "group": "3_generar@1"
+        },
+        {
+          "command": "abapNavigator.diccionario.generarData",
+          "when": "view == abapNavigator.diccionario && viewItem =~ /^(cabecera|grupoCampos|include|campo|campoConValores)$/ && abapNavigator.diccionario.conCampos",
+          "group": "3_generar@2"
+        },
+        {
+          "command": "abapNavigator.diccionario.generarTablaInterna",
+          "when": "view == abapNavigator.diccionario && viewItem =~ /^(cabecera|grupoCampos|include|campo|campoConValores)$/ && abapNavigator.diccionario.conCampos",
+          "group": "3_generar@3"
+        },
+        {
+          "command": "abapNavigator.diccionario.generarCase",
+          "when": "view == abapNavigator.diccionario && viewItem =~ /^(campo|campoConValores|dominioConValores)$/",
+          "group": "3_generar@4"
+        },
+        {
+          "command": "abapNavigator.ordenes.copiarNumero",
+          "when": "view == abapNavigator.ordenes && viewItem =~ /^(orden|tarea)$/",
+          "group": "1_ordenes@0"
+        },
+        {
+          "command": "abapNavigator.ordenes.organizadorOficial",
+          "when": "view == abapNavigator.ordenes && viewItem == orden",
+          "group": "1_ordenes@1"
+        },
+        {
+          "command": "abapNavigator.versiones.compararSeleccion",
+          "when": "view == abapNavigator.versiones && viewItem =~ /^version(ConOrden)?$/",
+          "group": "1_versiones@0"
+        },
+        {
+          "command": "abapNavigator.versiones.abrirVersion",
+          "when": "view == abapNavigator.versiones && viewItem =~ /^version(ConOrden)?$/",
+          "group": "1_versiones@1"
+        },
+        {
+          "command": "abapNavigator.versiones.copiarOrden",
+          "when": "view == abapNavigator.versiones && viewItem == versionConOrden",
+          "group": "2_orden@0"
+        },
+        {
+          "command": "abapNavigator.monitor.dumpsTodos",
+          "when": "view == abapNavigator.monitor && viewItem == seccionDumps && !abapNavigator.monitor.dumpsTodos",
+          "group": "inline"
+        },
+        {
+          "command": "abapNavigator.monitor.dumpsMios",
+          "when": "view == abapNavigator.monitor && viewItem == seccionDumps && abapNavigator.monitor.dumpsTodos",
+          "group": "inline"
+        },
+        {
+          "command": "abapNavigator.monitor.inactivosTodos",
+          "when": "view == abapNavigator.monitor && viewItem == seccionInactivos && !abapNavigator.monitor.inactivosTodos",
+          "group": "inline"
+        },
+        {
+          "command": "abapNavigator.monitor.inactivosMios",
+          "when": "view == abapNavigator.monitor && viewItem == seccionInactivos && abapNavigator.monitor.inactivosTodos",
+          "group": "inline"
+        },
+        {
+          "command": "abapNavigator.monitor.copiarNombre",
+          "when": "view == abapNavigator.monitor && viewItem =~ /^(dump|inactivo|objetoOrden)/",
+          "group": "1_copiar"
+        },
+        {
+          "command": "abapNavigator.ia.copiarConfiguracion",
+          "when": "view == abapNavigator.ia && viewItem == servidor",
+          "group": "ia@1"
+        },
+        {
+          "command": "abapNavigator.ia.regenerarToken",
+          "when": "view == abapNavigator.ia && viewItem == servidor",
+          "group": "ia@2"
+        },
+        {
+          "command": "abapNavigator.ia.aplicarPropuesta",
+          "when": "view == abapNavigator.ia && viewItem == propuestaPendiente",
+          "group": "inline@0"
+        },
+        {
+          "command": "abapNavigator.ia.rechazarPropuesta",
+          "when": "view == abapNavigator.ia && viewItem == propuestaPendiente",
+          "group": "inline@1"
+        }
+      ],
+      "commandPalette": [
+        {
+          "command": "abapNavigator.monitor.abrirPosicion",
+          "when": "false"
+        },
+        {
+          "command": "abapNavigator.objeto.ir",
+          "when": "false"
+        },
+        {
+          "command": "abapNavigator.paquetes.abrir",
+          "when": "false"
+        },
+        {
+          "command": "abapNavigator.paquetes.verDatos",
+          "when": "false"
+        },
+        {
+          "command": "abapNavigator.objeto.buscarOficial",
+          "when": "false"
+        },
+        {
+          "command": "abapNavigator.diccionario.copiarNombre",
+          "when": "false"
+        },
+        {
+          "command": "abapNavigator.diccionario.verDatos",
+          "when": "abapNavigator.diccionario.esTabla"
+        },
+        {
+          "command": "abapNavigator.diccionario.masDatos",
+          "when": "false"
+        },
+        {
+          "command": "abapNavigator.diccionario.ocultarDatos",
+          "when": "false"
+        },
+        {
+          "command": "abapNavigator.diccionario.ocultarUsos",
+          "when": "false"
+        },
+        {
+          "command": "abapNavigator.diccionario.anadirPrefijoPropio",
+          "when": "false"
+        },
+        {
+          "command": "abapNavigator.diccionario.abrirUso",
+          "when": "false"
+        },
+        {
+          "command": "abapNavigator.diccionario.generarTypes",
+          "when": "false"
+        },
+        {
+          "command": "abapNavigator.diccionario.generarSelect",
+          "when": "false"
+        },
+        {
+          "command": "abapNavigator.diccionario.generarData",
+          "when": "false"
+        },
+        {
+          "command": "abapNavigator.diccionario.generarTablaInterna",
+          "when": "false"
+        },
+        {
+          "command": "abapNavigator.diccionario.generarCase",
+          "when": "false"
+        },
+        {
+          "command": "abapNavigator.firmas.insertarLlamada"
+        },
+        {
+          "command": "abapNavigator.firmas.abrir",
+          "when": "false"
+        },
+        {
+          "command": "abapNavigator.ordenes.abrirObjeto",
+          "when": "false"
+        },
+        {
+          "command": "abapNavigator.ordenes.copiarNumero",
+          "when": "false"
+        },
+        {
+          "command": "abapNavigator.ordenes.conectar",
+          "when": "false"
+        },
+        {
+          "command": "abapNavigator.versiones.abrirDiff",
+          "when": "false"
+        },
+        {
+          "command": "abapNavigator.versiones.abrirVersion",
+          "when": "false"
+        },
+        {
+          "command": "abapNavigator.versiones.copiarOrden",
+          "when": "false"
+        },
+        {
+          "command": "abapNavigator.monitor.conectar",
+          "when": "false"
+        },
+        {
+          "command": "abapNavigator.monitor.abrirDump",
+          "when": "false"
+        },
+        {
+          "command": "abapNavigator.monitor.abrirInactivo",
+          "when": "false"
+        },
+        {
+          "command": "abapNavigator.monitor.abrirObjetoOrden",
+          "when": "false"
+        },
+        {
+          "command": "abapNavigator.monitor.masDumps",
+          "when": "false"
+        },
+        {
+          "command": "abapNavigator.monitor.dumpsTodos",
+          "when": "false"
+        },
+        {
+          "command": "abapNavigator.monitor.dumpsMios",
+          "when": "false"
+        },
+        {
+          "command": "abapNavigator.monitor.inactivosTodos",
+          "when": "false"
+        },
+        {
+          "command": "abapNavigator.monitor.inactivosMios",
+          "when": "false"
+        },
+        {
+          "command": "abapNavigator.monitor.copiarNombre",
+          "when": "false"
+        },
+        {
+          "command": "abapNavigator.monitor.activarTodo",
+          "when": "abapNavigator.monitor.escribible"
+        },
+        {
+          "command": "abapNavigator.ia.abrirLlamada",
+          "when": "false"
+        },
+        {
+          "command": "abapNavigator.ia.abrirPropuesta",
+          "when": "false"
+        },
+        {
+          "command": "abapNavigator.ia.aplicarPropuesta",
+          "when": "abapNavigator.ia.hayPropuestas"
+        },
+        {
+          "command": "abapNavigator.ia.rechazarPropuesta",
+          "when": "abapNavigator.ia.hayPropuestas"
+        }
+      ]
+    },
+    "viewsWelcome": [
+      {
+        "view": "abapNavigator.sistemas",
+        "contents": "Sextante necesita la extensión de SAP ABAP Development Tools.\n[Instalar ABAP Development Tools](command:workbench.extensions.search?%22sapse.adt-vscode%22)",
+        "when": "!abapNavigator.oficialInstalada"
+      },
+      {
+        "view": "abapNavigator.sistemas",
+        "contents": "No hay sistemas configurados.\n[Nuevo sistema](command:abapNavigator.sistemas.nuevo)",
+        "when": "abapNavigator.oficialInstalada && abapNavigator.sinDestinos"
+      },
+      {
+        "view": "abapNavigator.objeto",
+        "contents": "Abre un objeto ABAP para ver su estructura.\n[Buscar objeto](command:abapNavigator.buscar)\n[Abrir por URI](command:abapNavigator.objeto.abrir)",
+        "when": "!abapNavigator.objetoAbierto"
+      },
+      {
+        "view": "abapNavigator.paquetes",
+        "contents": "Marca un sistema como activo para explorar sus paquetes.\n[Elegir sistema](command:abapNavigator.sistemas.marcarActivo)",
+        "when": "abapNavigator.paquetesSinSistema"
+      },
+      {
+        "view": "abapNavigator.paquetes",
+        "contents": "Conecta primero al sistema activo.\n[Conectar](command:abapNavigator.paquetes.conectar)",
+        "when": "abapNavigator.paquetesSinConexion"
+      }
+    ],
+    "configuration": {
+      "title": "Sextante",
+      "properties": {
+        "abapNavigator.ia.servidor": {
+          "type": "boolean",
+          "default": true,
+          "description": "Arranca el servidor MCP local que permite a un agente de IA trabajar con Sextante."
+        },
+        "abapNavigator.ia.puerto": {
+          "type": "integer",
+          "default": 2237,
+          "minimum": 1024,
+          "maximum": 65535,
+          "description": "Puerto local (127.0.0.1) del servidor MCP del agente."
+        }
+      }
+    },
+    "walkthroughs": [
+      {
+        "id": "sextante.primerosPasos",
+        "title": "Primeros pasos con Sextante",
+        "description": "Navega, entiende y cambia código ABAP como en SE80, sin salir de VS Code.",
+        "steps": [
+          {
+            "id": "conectar",
+            "title": "Conecta un sistema",
+            "description": "Sextante usa los sistemas de la extensión oficial de SAP. Indica una vez el rol de cada uno (DEV, QAS o PRD) y conéctate con tu usuario.\n[Abrir Sextante](command:workbench.view.extension.abapNavigator)",
+            "media": {
+              "image": "media/tutorial/01-panel.png",
+              "altText": "Panel de Sextante con la lista de sistemas, las acciones y los paquetes"
+            },
+            "completionEvents": [
+              "onView:abapNavigator.sistemas"
+            ]
+          },
+          {
+            "id": "buscar",
+            "title": "Busca un objeto",
+            "description": "Programas, clases, includes, tablas, módulos de funciones y transacciones por nombre, como en SE80.\n[Buscar objeto](command:abapNavigator.buscar)",
+            "media": {
+              "image": "media/tutorial/02-buscar.png",
+              "altText": "Búsqueda rápida de objetos con los resultados de un programa y sus includes"
+            },
+            "completionEvents": [
+              "onCommand:abapNavigator.buscar"
+            ]
+          },
+          {
+            "id": "objeto",
+            "title": "Recorre su estructura",
+            "description": "La vista Objeto muestra includes, clases locales, métodos y eventos. Un clic lleva al código; Ctrl+clic sobre un PERFORM salta a su FORM.",
+            "media": {
+              "image": "media/tutorial/03-objeto.png",
+              "altText": "Árbol del objeto con includes, clases locales y métodos"
+            },
+            "completionEvents": [
+              "onView:abapNavigator.objeto"
+            ]
+          },
+          {
+            "id": "acciones",
+            "title": "Actúa con un clic",
+            "description": "Activar, Activar todo, Verificar sintaxis, ATC, Unit tests, transporte, versiones y comparar con otro sistema: los comandos de la extensión oficial, siempre a la vista. En QAS y PRD el código queda en solo lectura.",
+            "media": {
+              "image": "media/tutorial/05-acciones.png",
+              "altText": "Vista Acciones con los grupos Desarrollo, Transporte, Versiones y Herramientas"
+            },
+            "completionEvents": [
+              "onView:abapNavigator.acciones"
+            ]
+          },
+          {
+            "id": "diccionario",
+            "title": "El diccionario en contexto",
+            "description": "Pasa el ratón sobre una tabla o un campo para ver su estructura sin salir del código. El panel Diccionario genera TYPES, SELECT y DATA. Necesita la conexión RFC.",
+            "media": {
+              "image": "media/tutorial/04-diccionario-hover.png",
+              "altText": "Ventana emergente con los campos de la tabla T001 sobre un SELECT"
+            },
+            "completionEvents": [
+              "onView:abapNavigator.diccionario"
+            ]
+          },
+          {
+            "id": "agente",
+            "title": "Trabaja con un agente de IA",
+            "description": "Sextante trae un servidor MCP local para Claude Code u otro agente: lee el código, propone cambios como un diff que tú aplicas o rechazas, verifica la sintaxis y pasa el ATC. Activar solo en DEV y con tu confirmación.\n[Conectar el agente](command:abapNavigator.ia.conectarAgente)",
+            "media": {
+              "image": "media/tutorial/07-agente-propuesta.png",
+              "altText": "Propuesta del agente en un diff con los botones Aplicar y Rechazar"
+            },
+            "completionEvents": [
+              "onCommand:abapNavigator.ia.conectarAgente"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "scripts": {
+    "compile": "tsc -p . && pnpm run compile:puente",
+    "compile:puente": "node out/scripts/compilar-puente.js",
+    "watch": "tsc -watch -p .",
+    "lint": "eslint --no-error-on-unmatched-pattern src test scripts",
+    "test:unit": "mocha \"out/test/unit/**/*.test.js\"",
+    "test:integracion": "node out/test/run-tests.js",
+    "test": "pnpm run compile && pnpm run test:unit && pnpm run test:integracion",
+    "icono": "node out/scripts/generar-icono.js",
+    "verificar:paquete": "node out/scripts/verificar-paquete.js",
+    "package": "pnpm run verificar:paquete && vsce package --no-dependencies",
+    "publish": "pnpm run verificar:paquete && vsce publish --no-dependencies"
+  },
+  "devDependencies": {
+    "@resvg/resvg-js": "^2.6.2",
+    "@types/mocha": "^10.0.10",
+    "@types/node": "^22.20.5",
+    "@types/vscode": "~1.100.0",
+    "@vscode/test-electron": "^2.5.2",
+    "@vscode/vsce": "^4.1.0",
+    "eslint": "^9.39.5",
+    "glob": "^11.1.0",
+    "mocha": "^11.8.0",
+    "typescript": "^5.9.3",
+    "typescript-eslint": "^8.72.1",
+    "vscode-oniguruma": "^2.0.1",
+    "vscode-textmate": "^9.3.2"
+  }
+}

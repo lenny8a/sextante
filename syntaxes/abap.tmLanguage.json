@@ -1,0 +1,932 @@
+{
+  "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+  "name": "ABAP",
+  "scopeName": "source.abap",
+  "comment": "Gramática propia de Sextante. Prioridad: comentarios y cadenas, SQL, declaraciones, bloques, control, tipos, constructores, llamadas, sentencias, operadores e identificadores. Todas las palabras clave sin distinguir mayúsculas.",
+  "patterns": [
+    {
+      "include": "#comentarios"
+    },
+    {
+      "include": "#pragmas"
+    },
+    {
+      "include": "#cadenas"
+    },
+    {
+      "include": "#sql"
+    },
+    {
+      "include": "#fin-select"
+    },
+    {
+      "include": "#clase-definicion"
+    },
+    {
+      "include": "#clase-implementacion"
+    },
+    {
+      "include": "#interfaz"
+    },
+    {
+      "include": "#metodos"
+    },
+    {
+      "include": "#declaracion"
+    },
+    {
+      "include": "#declaracion-en-linea"
+    },
+    {
+      "include": "#host"
+    },
+    {
+      "include": "#llamada-sentencia"
+    },
+    {
+      "include": "#bloque-nombre"
+    },
+    {
+      "include": "#perform"
+    },
+    {
+      "include": "#seccion"
+    },
+    {
+      "include": "#bloques"
+    },
+    {
+      "include": "#control-at"
+    },
+    {
+      "include": "#catch"
+    },
+    {
+      "include": "#control"
+    },
+    {
+      "include": "#tipo"
+    },
+    {
+      "include": "#clase-estatica"
+    },
+    {
+      "include": "#constructores"
+    },
+    {
+      "include": "#modificador-valor"
+    },
+    {
+      "include": "#builtins"
+    },
+    {
+      "include": "#llamadas"
+    },
+    {
+      "include": "#modificadores-globales"
+    },
+    {
+      "include": "#sentencias"
+    },
+    {
+      "include": "#operadores-palabra"
+    },
+    {
+      "include": "#variables-lenguaje"
+    },
+    {
+      "include": "#constantes"
+    },
+    {
+      "include": "#field-symbols"
+    },
+    {
+      "include": "#operadores"
+    },
+    {
+      "include": "#numeros"
+    },
+    {
+      "include": "#puntuacion"
+    },
+    {
+      "include": "#identificadores"
+    }
+  ],
+  "repository": {
+    "comentarios": {
+      "patterns": [
+        {
+          "name": "comment.line.full.abap",
+          "match": "^\\*.*$"
+        },
+        {
+          "name": "comment.line.partial.abap",
+          "match": "\".*$"
+        }
+      ]
+    },
+    "pragmas": {
+      "name": "comment.line.pragma.abap",
+      "match": "##\\w+(?:\\[[^\\]\\s]*\\])*"
+    },
+    "cadenas": {
+      "patterns": [
+        {
+          "name": "string.quoted.single.abap",
+          "match": "'(?:[^']|'')*(?:'|$)"
+        },
+        {
+          "name": "string.quoted.backtick.abap",
+          "match": "\\`(?:[^\\`]|\\`\\`)*(?:\\`|$)"
+        },
+        {
+          "include": "#plantilla"
+        }
+      ]
+    },
+    "plantilla": {
+      "name": "string.interpolated.abap",
+      "begin": "\\|",
+      "beginCaptures": {
+        "0": {
+          "name": "punctuation.definition.string.begin.abap"
+        }
+      },
+      "end": "\\||$",
+      "endCaptures": {
+        "0": {
+          "name": "punctuation.definition.string.end.abap"
+        }
+      },
+      "patterns": [
+        {
+          "name": "constant.character.escape.abap",
+          "match": "\\\\[|{}\\\\nrt]"
+        },
+        {
+          "name": "meta.embedded.expression.abap",
+          "begin": "\\{",
+          "beginCaptures": {
+            "0": {
+              "name": "punctuation.section.embedded.begin.abap"
+            }
+          },
+          "end": "\\}",
+          "endCaptures": {
+            "0": {
+              "name": "punctuation.section.embedded.end.abap"
+            }
+          },
+          "patterns": [
+            {
+              "include": "#expresion"
+            }
+          ]
+        }
+      ]
+    },
+    "sql": {
+      "name": "meta.sql.abap",
+      "begin": "(?i)(?:(?<![-\\w/~>@<])(select|open\\s+cursor|fetch\\s+next\\s+cursor)|^\\s*(with)(?=\\s+\\+))(?![\\w/(-])",
+      "beginCaptures": {
+        "1": {
+          "name": "keyword.other.sql.abap"
+        },
+        "2": {
+          "name": "keyword.other.sql.abap"
+        }
+      },
+      "end": "\\.",
+      "endCaptures": {
+        "0": {
+          "name": "punctuation.terminator.abap"
+        }
+      },
+      "patterns": [
+        {
+          "include": "#comentarios"
+        },
+        {
+          "include": "#pragmas"
+        },
+        {
+          "include": "#cadenas"
+        },
+        {
+          "include": "#host"
+        },
+        {
+          "include": "#declaracion-en-linea"
+        },
+        {
+          "match": "(?i)(?<![-\\w/~>@<])(from|join)\\s+(?!(?:table|corresponding)(?![\\w/-]))((?:/\\w+/)?[A-Za-z_]\\w*)(?![\\w/])",
+          "captures": {
+            "1": {
+              "name": "keyword.other.sql.abap"
+            },
+            "2": {
+              "name": "entity.name.type.abap"
+            }
+          }
+        },
+        {
+          "name": "support.function.builtin.abap",
+          "match": "(?i)(?<![-\\w/~>@<])(?:tstmp_current_utctimestamp|currency_conversion|concat_with_space|dats_days_between|dats_add_months|unit_conversion|tstmp_is_valid|dats_is_valid|dats_add_days|string_agg|row_number|substring|division|coalesce|grouping|replace|concat|length|count|floor|round|ltrim|rtrim|right|instr|upper|lower|ceil|lpad|rpad|left|uuid|cast|rank|sum|avg|min|max|abs|div|mod)(?=\\s*\\()"
+        },
+        {
+          "name": "keyword.other.sql.abap",
+          "match": "(?i)(?<![-\\w/~>@<])(?:corresponding|connection|descending|privileged|appending|bypassing|specified|intersect|endselect|ascending|hierarchy|distinct|entries|between|initial|package|primary|select|single|fields|having|offset|buffer|client|except|escape|exists|cursor|access|table|where|group|order|inner|right|outer|cross|using|union|fetch|exact|from|into|left|join|rows|like|null|case|when|then|else|cast|with|hold|open|next|size|some|data|many|for|all|and|not|end|key|any|new|one|of|by|on|as|in|up|to|or|is)(?![\\w/-])"
+        },
+        {
+          "include": "#field-symbols"
+        },
+        {
+          "include": "#constantes"
+        },
+        {
+          "include": "#variables-lenguaje"
+        },
+        {
+          "include": "#numeros"
+        },
+        {
+          "include": "#operadores"
+        },
+        {
+          "include": "#puntuacion"
+        },
+        {
+          "include": "#identificadores"
+        }
+      ]
+    },
+    "fin-select": {
+      "name": "keyword.other.sql.abap",
+      "match": "(?i)(?<![-\\w/~>@<])(?:endselect)(?![\\w/-])"
+    },
+    "clase-definicion": {
+      "name": "meta.class.abap",
+      "begin": "(?i)(?<![-\\w/~>@<])(class)\\s+((?:/\\w+/)?[A-Za-z_]\\w*)\\s+(definition)(?![\\w/-])",
+      "beginCaptures": {
+        "1": {
+          "name": "keyword.control.block.abap"
+        },
+        "2": {
+          "name": "entity.name.type.abap"
+        },
+        "3": {
+          "name": "keyword.control.block.abap"
+        }
+      },
+      "end": "\\.",
+      "endCaptures": {
+        "0": {
+          "name": "punctuation.terminator.abap"
+        }
+      },
+      "patterns": [
+        {
+          "include": "#comentarios"
+        },
+        {
+          "include": "#pragmas"
+        },
+        {
+          "include": "#herencia"
+        },
+        {
+          "include": "#modificadores-clase"
+        },
+        {
+          "include": "#puntuacion"
+        },
+        {
+          "include": "#identificadores"
+        }
+      ]
+    },
+    "clase-implementacion": {
+      "match": "(?i)(?<![-\\w/~>@<])(class)\\s+((?:/\\w+/)?[A-Za-z_]\\w*)\\s+(implementation)(?![\\w/-])",
+      "captures": {
+        "1": {
+          "name": "keyword.control.block.abap"
+        },
+        "2": {
+          "name": "entity.name.type.abap"
+        },
+        "3": {
+          "name": "keyword.control.block.abap"
+        }
+      }
+    },
+    "interfaz": {
+      "name": "meta.interface.abap",
+      "begin": "(?i)(?<![-\\w/~>@<])(interface)\\s+((?:/\\w+/)?[A-Za-z_]\\w*)(?![\\w/])",
+      "beginCaptures": {
+        "1": {
+          "name": "keyword.control.block.abap"
+        },
+        "2": {
+          "name": "entity.name.type.abap"
+        }
+      },
+      "end": "\\.",
+      "endCaptures": {
+        "0": {
+          "name": "punctuation.terminator.abap"
+        }
+      },
+      "patterns": [
+        {
+          "include": "#comentarios"
+        },
+        {
+          "include": "#pragmas"
+        },
+        {
+          "include": "#modificadores-clase"
+        },
+        {
+          "include": "#puntuacion"
+        },
+        {
+          "include": "#identificadores"
+        }
+      ]
+    },
+    "herencia": {
+      "match": "(?i)(?<![-\\w/~>@<])(inheriting)\\s+(from)\\s+((?:/\\w+/)?[A-Za-z_]\\w*(?:(?:=>|-|~)(?:/\\w+/)?[A-Za-z_]\\w*)*)",
+      "captures": {
+        "1": {
+          "name": "storage.modifier.abap"
+        },
+        "2": {
+          "name": "storage.modifier.abap"
+        },
+        "3": {
+          "name": "entity.name.type.abap"
+        }
+      }
+    },
+    "modificadores-clase": {
+      "name": "storage.modifier.abap",
+      "match": "(?i)(?<![-\\w/~>@<])(?:inheriting|protected|dangerous|abstract|deferred|harmless|critical|duration|private|testing|enabled|friends|public|create|shared|memory|medium|global|final|level|short|local|from|load|risk|long|for)(?![\\w/-])"
+    },
+    "metodos": {
+      "name": "meta.declaration.abap",
+      "begin": "(?i)(?<![-\\w/~>@<])(methods|class-methods)(?![\\w/(-])(?:\\s*:)?(?:\\s*((?:/\\w+/)?[A-Za-z_]\\w*(?:~(?:/\\w+/)?[A-Za-z_]\\w*)?)(?![\\w/]))?",
+      "beginCaptures": {
+        "1": {
+          "name": "keyword.declaration.abap"
+        },
+        "2": {
+          "name": "entity.name.function.abap"
+        }
+      },
+      "end": "\\.",
+      "endCaptures": {
+        "0": {
+          "name": "punctuation.terminator.abap"
+        }
+      },
+      "patterns": [
+        {
+          "include": "#comentarios"
+        },
+        {
+          "include": "#parametros-firma"
+        },
+        {
+          "include": "#contenido-declaracion"
+        }
+      ]
+    },
+    "declaracion": {
+      "name": "meta.declaration.abap",
+      "begin": "(?i)(?<![-\\w/~>@<])(select-options|field-symbols|class-events|class-data|interfaces|parameters|type-pools|constants|type-pool|statics|aliases|events|tables|ranges|types|data)(?![\\w/(-])",
+      "beginCaptures": {
+        "1": {
+          "name": "keyword.declaration.abap"
+        }
+      },
+      "end": "\\.",
+      "endCaptures": {
+        "0": {
+          "name": "punctuation.terminator.abap"
+        }
+      },
+      "patterns": [
+        {
+          "include": "#contenido-declaracion"
+        }
+      ]
+    },
+    "contenido-declaracion": {
+      "patterns": [
+        {
+          "include": "#comentarios"
+        },
+        {
+          "include": "#pragmas"
+        },
+        {
+          "include": "#cadenas"
+        },
+        {
+          "include": "#field-symbols"
+        },
+        {
+          "include": "#tipo"
+        },
+        {
+          "include": "#modificador-valor"
+        },
+        {
+          "include": "#constructores"
+        },
+        {
+          "include": "#clase-estatica"
+        },
+        {
+          "name": "storage.modifier.abap",
+          "match": "(?i)(?<![-\\w/~>@<])(?:radiobutton\\s+group|matchcode\\s+object|visible\\s+length|redefinition|initial\\s+size|user-command|no\\s+intervals|no-extension|as\\s+checkbox|non-unique|components|exceptions|is\\s+initial|obligatory|lower\\s+case|no-display|as\\s+listbox|importing|exporting|returning|resumable|preferred|parameter|read-only|protected|reference|structure|base\\s+type|memory\\s+id|standard|decimals|optional|changing|abstract|modif\\s+id|default|raising|private|testing|sorted|hashed|unique|length|public|occurs|table|index|range|empty|begin|value|final|event|boxed|alias|type|like|line|with|enum|ref|any|key|end|for|to|of|as)(?![\\w/-])"
+        },
+        {
+          "include": "#constantes"
+        },
+        {
+          "include": "#variables-lenguaje"
+        },
+        {
+          "include": "#operadores"
+        },
+        {
+          "include": "#numeros"
+        },
+        {
+          "include": "#puntuacion"
+        },
+        {
+          "include": "#identificadores"
+        }
+      ]
+    },
+    "declaracion-en-linea": {
+      "name": "keyword.declaration.abap",
+      "match": "(?i)(?<![-\\w/~>])(?:data|final|field-symbol)(?=\\()"
+    },
+    "host": {
+      "match": "(?i)(@)((?:(?=\\(|(?:data|final)\\())|(?:<[\\w/]+>|(?:/\\w+/)?[A-Za-z_]\\w*)(?:-(?:/\\w+/)?[A-Za-z_]\\w*)*)",
+      "captures": {
+        "1": {
+          "name": "punctuation.definition.variable.host.abap"
+        },
+        "2": {
+          "name": "variable.other.host.abap"
+        }
+      }
+    },
+    "llamada-sentencia": {
+      "match": "(?i)(?<![-\\w/~>@<])(call)\\s+(method|function|transformation|screen|selection-screen|transaction|badi)(?![\\w/-])",
+      "captures": {
+        "1": {
+          "name": "keyword.other.abap"
+        },
+        "2": {
+          "name": "keyword.other.abap"
+        }
+      }
+    },
+    "bloque-nombre": {
+      "match": "(?i)(?<![-\\w/~>@<])(method|form|function|module)\\s+((?:/\\w+/)?[A-Za-z_]\\w*(?:~(?:/\\w+/)?[A-Za-z_]\\w*)?)(?![\\w/])",
+      "captures": {
+        "1": {
+          "name": "keyword.control.block.abap"
+        },
+        "2": {
+          "name": "entity.name.function.abap"
+        }
+      }
+    },
+    "perform": {
+      "match": "(?i)(?<![-\\w/~>@<])(perform)\\s+((?:/\\w+/)?[A-Za-z_]\\w*)(?![\\w/])",
+      "captures": {
+        "1": {
+          "name": "keyword.other.abap"
+        },
+        "2": {
+          "name": "entity.name.function.abap"
+        }
+      }
+    },
+    "seccion": {
+      "match": "(?i)(?<![-\\w/~>@<])(public|protected|private)\\s+(section)(?![\\w/-])",
+      "captures": {
+        "1": {
+          "name": "keyword.control.block.abap"
+        },
+        "2": {
+          "name": "keyword.control.block.abap"
+        }
+      }
+    },
+    "bloques": {
+      "name": "keyword.control.block.abap",
+      "match": "(?i)(?<![-\\w/~>@<])(?:start-of-selection|end-of-selection|load-of-program|implementation|initialization|endinterface|endfunction|top-of-page|end-of-page|definition|endmethod|interface|endmodule|endclass|function|endform|method|module|class|form)(?![\\w/-])"
+    },
+    "control-at": {
+      "match": "(?i)^\\s*(at)(?![\\w/-])(?:\\s+(first|last|new|end\\s+of)(?![\\w/-]))?",
+      "captures": {
+        "1": {
+          "name": "keyword.control.abap"
+        },
+        "2": {
+          "name": "keyword.control.abap"
+        }
+      }
+    },
+    "catch": {
+      "match": "(?i)(?<![-\\w/~>@<])(catch)(?![\\w/-])(?:\\s+(before)\\s+(unwind)(?![\\w/-]))?((?:\\s+(?!into(?![\\w/-]))(?:/\\w+/)?[A-Za-z_]\\w*(?![\\w/-]))*)",
+      "captures": {
+        "1": {
+          "name": "keyword.control.abap"
+        },
+        "2": {
+          "name": "keyword.control.abap"
+        },
+        "3": {
+          "name": "keyword.control.abap"
+        },
+        "4": {
+          "patterns": [
+            {
+              "name": "entity.name.type.abap",
+              "match": "(?:/\\w+/)?[A-Za-z_]\\w*"
+            }
+          ]
+        }
+      }
+    },
+    "control": {
+      "name": "keyword.control.abap",
+      "match": "(?i)(?<![-\\w/~>@<])(?:endprovide|endwhile|continue|endcase|endloop|cleanup|provide|elseif|others|endtry|return|assert|resume|endif|enddo|while|catch|check|raise|leave|endat|endon|retry|else|case|when|loop|exit|stop|try|if|do)(?![\\w/-])"
+    },
+    "tipo": {
+      "match": "(?i)(?<![-\\w/~>@<])(type|like)\\s+(?:(ref)\\s+(to)\\s+|(range)\\s+(of)\\s+|(line)\\s+(of)\\s+|(?:(standard|sorted|hashed|any|index)\\s+)?(table)\\s+(of)\\s+(?:(ref)\\s+(to)\\s+)?)?(?!(?:table|standard|sorted|hashed|ref|range|line|begin|end|of)(?![\\w/-]))((?:/\\w+/)?[A-Za-z_]\\w*(?:(?:=>|-|~)(?:/\\w+/)?[A-Za-z_]\\w*)*)(?![\\w/])",
+      "captures": {
+        "1": {
+          "name": "storage.modifier.abap"
+        },
+        "2": {
+          "name": "storage.modifier.abap"
+        },
+        "3": {
+          "name": "storage.modifier.abap"
+        },
+        "4": {
+          "name": "storage.modifier.abap"
+        },
+        "5": {
+          "name": "storage.modifier.abap"
+        },
+        "6": {
+          "name": "storage.modifier.abap"
+        },
+        "7": {
+          "name": "storage.modifier.abap"
+        },
+        "8": {
+          "name": "storage.modifier.abap"
+        },
+        "9": {
+          "name": "storage.modifier.abap"
+        },
+        "10": {
+          "name": "storage.modifier.abap"
+        },
+        "11": {
+          "name": "storage.modifier.abap"
+        },
+        "12": {
+          "name": "storage.modifier.abap"
+        },
+        "13": {
+          "name": "entity.name.type.abap"
+        }
+      }
+    },
+    "clase-estatica": {
+      "name": "entity.name.type.abap",
+      "match": "(?<![-\\w/~>])(?:/\\w+/)?[A-Za-z_]\\w*(?==>)"
+    },
+    "constructores": {
+      "match": "(?i)(?<![-\\w/~>@])(corresponding|switch|reduce|filter|value|exact|cond|conv|cast|new|ref)\\s+(?:(#)|((?:/\\w+/)?[A-Za-z_]\\w*(?:(?:=>|-|~)(?:/\\w+/)?[A-Za-z_]\\w*)*))(?=\\()",
+      "captures": {
+        "1": {
+          "name": "keyword.operator.constructor.abap"
+        },
+        "2": {
+          "name": "keyword.operator.constructor.abap"
+        },
+        "3": {
+          "name": "entity.name.type.abap"
+        }
+      }
+    },
+    "modificador-valor": {
+      "name": "storage.modifier.abap",
+      "match": "(?i)(?<![-\\w/~>@])(?:value|reference)(?=\\()"
+    },
+    "builtins": {
+      "name": "support.function.builtin.abap",
+      "match": "(?i)(?<![-\\w/~>])(?:contains_any_not_of|count_any_not_of|substring_before|contains_any_of|concat_lines_of|find_any_not_of|substring_after|utclong_current|substring_from|find_first_of|count_any_of|substring_to|utclong_diff|line_exists|find_any_of|shift_right|utclong_add|line_index|shift_left|from_mixed|numofchar|substring|translate|contains|dbmaxlen|char_off|condense|distance|find_end|to_lower|to_upper|to_mixed|rescale|xsdbool|matches|xstrlen|charlen|replace|reverse|segment|bit-set|strlen|escape|insert|repeat|floor|trunc|log10|round|boolc|boolx|lines|count|match|ceil|frac|sign|ipow|sqrt|acos|asin|atan|cosh|sinh|tanh|nmax|nmin|cmax|cmin|find|abs|exp|log|sin|cos|tan)(?=\\()"
+    },
+    "llamadas": {
+      "comment": "Llamada funcional nombre( … ). Termina en el paréntesis de cierre o, si falta, antes del punto final de la sentencia.",
+      "begin": "(?<![-\\w/])((?:/\\w+/)?[A-Za-z_]\\w*)(\\()",
+      "beginCaptures": {
+        "1": {
+          "name": "entity.name.function.abap"
+        }
+      },
+      "end": "\\)|(?=\\.(?:\\s|$))",
+      "patterns": [
+        {
+          "include": "#contenido-llamada"
+        }
+      ]
+    },
+    "modificadores-globales": {
+      "name": "storage.modifier.abap",
+      "match": "(?i)(?<![-\\w/~>@<])(?:decimals|length|type|like)(?![\\w/-])"
+    },
+    "sentencias": {
+      "name": "keyword.other.abap",
+      "match": "(?i)(?<![-\\w/~>@<])(?:subtract-corresponding|multiply-corresponding|divide-corresponding|move-corresponding|add-corresponding|selection-screen|authority-check|selection-table|corresponding|transporting|initial\\s+line|concatenate|occurrences|transaction|destination|break-point|duplicates|exceptions|respecting|occurrence|background|activation|descending|translate|comparing|assigning|reference|exporting|importing|receiving|exception|separated|character|component|ascending|log-point|returning|condition|appending|resumable|condense|unassign|subtract|multiply|rollback|describe|function|adjacent|changing|deleting|trailing|starting|new-line|collect|refresh|replace|message|perform|convert|handler|entries|program|include|results|leading|casting|calling|keeping|logical|display|members|without|raising|append|insert|delete|modify|assign|unpack|divide|commit|export|import|submit|create|object|fields|binary|search|report|output|blanks|offset|memory|screen|update|groups|stable|sorted|format|before|unwind|clear|split|shift|write|event|index|where|using|lines|table|times|input|upper|lower|first|match|count|regex|group|uline|color|read|sort|free|move|find|pack|call|wait|into|from|with|then|rows|work|mode|byte|pcre|skip|task|unit|base|next|init|step|line|hide|cast|add|get|set|key|sum|all|via|for|let|to|of|no|by|up|at|id|as)(?![\\w/-])"
+    },
+    "operadores-palabra": {
+      "patterns": [
+        {
+          "match": "(?i)(?<![-\\w/~>@<])(instance\\s+of)\\s+((?:/\\w+/)?[A-Za-z_]\\w*(?:(?:=>|-|~)(?:/\\w+/)?[A-Za-z_]\\w*)*)(?![\\w/])",
+          "captures": {
+            "1": {
+              "name": "keyword.operator.word.abap"
+            },
+            "2": {
+              "name": "entity.name.type.abap"
+            }
+          }
+        },
+        {
+          "name": "keyword.operator.word.abap",
+          "match": "(?i)(?<![-\\w/~>@<])(?:requested|assigned|supplied|initial|between|bit-and|bit-xor|bit-not|bit-or|bound|equiv|and|not|xor|div|mod|or|is|in)(?![\\w/-])"
+        },
+        {
+          "name": "keyword.operator.word.abap",
+          "match": "(?i)(?<![-\\w/~>@<])(?:eq|ne|gt|lt|ge|le|co|cn|ca|na|cs|ns|cp|np)(?![\\w/-])(?!\\s*(?:[.,:()\\[\\]=]|->|-\\w|$)|\\s+(?:into|assigning|reference|transporting|with|index|where|from|to|by|comparing|using|in|group|lines|of)(?![\\w/-]))"
+        }
+      ]
+    },
+    "variables-lenguaje": {
+      "name": "variable.language.abap",
+      "match": "(?i)(?<![-\\w/~>@])(?:sy|syst|me|super)(?![\\w/])"
+    },
+    "constantes": {
+      "name": "constant.language.abap",
+      "match": "(?i)(?<![-\\w/~>@<])(?:abap_undefined|abap_false|abap_true|space)(?![\\w/-])"
+    },
+    "field-symbols": {
+      "name": "variable.other.field-symbol.abap",
+      "match": "(?<![\\w/])<[A-Za-z_][\\w/]*>"
+    },
+    "operadores": {
+      "patterns": [
+        {
+          "name": "keyword.operator.abap",
+          "match": "->|=>|\\?="
+        },
+        {
+          "name": "punctuation.separator.component.abap",
+          "match": "(?<=[\\w>)])-(?=[A-Za-z_/])"
+        },
+        {
+          "name": "keyword.operator.abap",
+          "match": "\\*\\*|&&=?|\\+=|-=|\\*=|/=|<>|<=|>=|=<|=>|><|=|<|>|\\+|-|\\*|/|~|&"
+        }
+      ]
+    },
+    "numeros": {
+      "name": "constant.numeric.abap",
+      "match": "(?<![\\w/])\\d+(?![\\w/])"
+    },
+    "puntuacion": {
+      "patterns": [
+        {
+          "name": "punctuation.terminator.abap",
+          "match": "\\."
+        },
+        {
+          "name": "punctuation.separator.comma.abap",
+          "match": ","
+        },
+        {
+          "name": "punctuation.separator.chain.abap",
+          "match": ":"
+        }
+      ]
+    },
+    "identificadores": {
+      "name": "variable.other.abap",
+      "match": "(?<![\\w/])(?:/\\w+/)?[A-Za-z_]\\w*"
+    },
+    "expresion": {
+      "patterns": [
+        {
+          "include": "#cadenas"
+        },
+        {
+          "include": "#field-symbols"
+        },
+        {
+          "include": "#host"
+        },
+        {
+          "include": "#variables-lenguaje"
+        },
+        {
+          "include": "#constantes"
+        },
+        {
+          "include": "#clase-estatica"
+        },
+        {
+          "include": "#constructores"
+        },
+        {
+          "include": "#builtins"
+        },
+        {
+          "include": "#llamadas"
+        },
+        {
+          "include": "#operadores-palabra"
+        },
+        {
+          "include": "#operadores"
+        },
+        {
+          "include": "#numeros"
+        },
+        {
+          "include": "#identificadores"
+        }
+      ]
+    },
+    "parametros-firma": {
+      "comment": "Nombres de parámetro en la firma de un método. RAISING queda fuera: le siguen clases de excepción.",
+      "patterns": [
+        {
+          "match": "(?i)(?<![-\\w/~>@<])(importing|exporting|changing|returning|exceptions)\\s+(?!(?:value|reference)\\()!?([A-Za-z_]\\w*)(?![\\w/(-])",
+          "captures": {
+            "1": {
+              "name": "storage.modifier.abap"
+            },
+            "2": {
+              "name": "variable.parameter.abap"
+            }
+          }
+        },
+        {
+          "match": "(?i)(?<![-\\w/~>@])(value|reference)\\(\\s*!?([A-Za-z_]\\w*)(?=\\s*\\))",
+          "captures": {
+            "1": {
+              "name": "storage.modifier.abap"
+            },
+            "2": {
+              "name": "variable.parameter.abap"
+            }
+          }
+        },
+        {
+          "match": "(?i)^\\s*!?([A-Za-z_]\\w*)(?=\\s+(?:type|like|optional|default)(?![\\w/-]))",
+          "captures": {
+            "1": {
+              "name": "variable.parameter.abap"
+            }
+          }
+        }
+      ]
+    },
+    "contenido-llamada": {
+      "patterns": [
+        {
+          "include": "#comentarios"
+        },
+        {
+          "include": "#pragmas"
+        },
+        {
+          "include": "#cadenas"
+        },
+        {
+          "include": "#parametro-llamada"
+        },
+        {
+          "include": "#contenido-parentesis"
+        }
+      ]
+    },
+    "parametro-llamada": {
+      "match": "(?i)(?<![-\\w/>~])(?!others(?!\\w))([A-Za-z_]\\w*)(?=\\s+=\\s)",
+      "captures": {
+        "1": {
+          "name": "variable.parameter.abap"
+        }
+      }
+    },
+    "parentesis": {
+      "comment": "Paréntesis sin nombre dentro de una llamada (filas de VALUE, condiciones). Mantiene el equilibrio y no marca parámetros.",
+      "begin": "\\(",
+      "end": "\\)|(?=\\.(?:\\s|$))",
+      "patterns": [
+        {
+          "include": "#contenido-parentesis"
+        }
+      ]
+    },
+    "contenido-parentesis": {
+      "patterns": [
+        {
+          "include": "#comentarios"
+        },
+        {
+          "include": "#pragmas"
+        },
+        {
+          "include": "#cadenas"
+        },
+        {
+          "include": "#declaracion-en-linea"
+        },
+        {
+          "include": "#host"
+        },
+        {
+          "include": "#control"
+        },
+        {
+          "include": "#tipo"
+        },
+        {
+          "include": "#clase-estatica"
+        },
+        {
+          "include": "#constructores"
+        },
+        {
+          "include": "#modificador-valor"
+        },
+        {
+          "include": "#builtins"
+        },
+        {
+          "include": "#llamadas"
+        },
+        {
+          "include": "#parentesis"
+        },
+        {
+          "include": "#modificadores-globales"
+        },
+        {
+          "include": "#sentencias"
+        },
+        {
+          "include": "#operadores-palabra"
+        },
+        {
+          "include": "#variables-lenguaje"
+        },
+        {
+          "include": "#constantes"
+        },
+        {
+          "include": "#field-symbols"
+        },
+        {
+          "include": "#operadores"
+        },
+        {
+          "include": "#numeros"
+        },
+        {
+          "include": "#puntuacion"
+        },
+        {
+          "include": "#identificadores"
+        }
+      ]
+    }
+  }
+}

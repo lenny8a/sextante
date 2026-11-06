@@ -1,0 +1,156 @@
+{
+  "nota": "Escrito a mano y anonimizado a partir de respuestas reales de un S/4HANA (2026-10-29). primeraPalabraPorLinea es inventado: primera palabra de la línea de cada símbolo Object, para simular la lectura del documento.",
+  "uri": "abap:/repotree-v1/DEST-S4/System%20Library/ZPAQ_S4/Source%20Code%20Library/Programs/ZPROG_EJEMPLO_S4/zprog_ejemplo_s4.prog.abap",
+  "informe": {
+    "fecha": "2026-10-29T12:00:00.000Z",
+    "versionOficial": "1.2.0",
+    "uriEditor": "abap:/repotree-v1/DEST-S4/System%20Library/ZPAQ_S4/Source%20Code%20Library/Programs/ZPROG_EJEMPLO_S4/zprog_ejemplo_s4.prog.abap",
+    "analisis": {
+      "destino": "DEST-S4",
+      "paquetes": [
+        "System Library",
+        "ZPAQ_S4",
+        "Source Code Library",
+        "Programs",
+        "ZPROG_EJEMPLO_S4"
+      ],
+      "archivo": "zprog_ejemplo_s4.prog.abap"
+    },
+    "nombreAff": {
+      "nombre": "zprog_ejemplo_s4",
+      "tipo": "prog",
+      "extension": "abap"
+    },
+    "hermanos": {
+      "entradas": [
+        {
+          "nombre": "zprog_ejemplo_s4.prog.json",
+          "tipo": "archivo"
+        },
+        {
+          "nombre": "zprog_ejemplo_s4.prog.abap",
+          "tipo": "archivo"
+        }
+      ],
+      "truncado": false,
+      "total": 2
+    },
+    "simbolosEstado": "ok",
+    "simbolos": [
+      {
+        "nombre": "ZPROG_EJEMPLO_S4_TOP",
+        "kind": 18,
+        "nombreKind": "Object",
+        "rango": [
+          7,
+          0,
+          7,
+          29
+        ],
+        "hijos": [],
+        "rangoSeleccion": [
+          7,
+          8,
+          7,
+          29
+        ]
+      },
+      {
+        "nombre": "ZPROG_EJEMPLO_S4_F01",
+        "kind": 18,
+        "nombreKind": "Object",
+        "rango": [
+          8,
+          0,
+          8,
+          29
+        ],
+        "hijos": [],
+        "rangoSeleccion": [
+          8,
+          8,
+          8,
+          29
+        ]
+      },
+      {
+        "nombre": "TABLA_1",
+        "kind": 18,
+        "nombreKind": "Object",
+        "rango": [
+          10,
+          0,
+          10,
+          15
+        ],
+        "hijos": [],
+        "rangoSeleccion": [
+          10,
+          8,
+          10,
+          15
+        ]
+      },
+      {
+        "nombre": "VAR_1",
+        "kind": 12,
+        "nombreKind": "Variable",
+        "rango": [
+          12,
+          0,
+          12,
+          10
+        ],
+        "hijos": [],
+        "rangoSeleccion": [
+          12,
+          5,
+          12,
+          10
+        ]
+      },
+      {
+        "nombre": "START-OF-SELECTION",
+        "kind": 18,
+        "nombreKind": "Object",
+        "rango": [
+          14,
+          0,
+          14,
+          18
+        ],
+        "hijos": [],
+        "rangoSeleccion": [
+          14,
+          0,
+          14,
+          18
+        ]
+      },
+      {
+        "nombre": "FORM_1",
+        "kind": 11,
+        "nombreKind": "Function",
+        "rango": [
+          20,
+          0,
+          20,
+          11
+        ],
+        "hijos": [],
+        "rangoSeleccion": [
+          20,
+          5,
+          20,
+          11
+        ]
+      }
+    ],
+    "primeraPalabraPorLinea": {
+      "7": "INCLUDE",
+      "8": "INCLUDE",
+      "10": "TABLES:",
+      "14": "START-OF-SELECTION."
+    }
+  }
+}

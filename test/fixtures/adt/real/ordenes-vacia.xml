@@ -1,0 +1,2 @@
+<!-- VERIFICADO 2026-10-30: GET /sap/bc/adt/cts/transportrequests?user=NADIE&targets=true -> HTTP/1.1 200  OK (application/vnd.sap.adt.transportorganizer.v1+xml; charset=utf-8); anonimizado -->
+<?xml version="1.0" encoding="utf-8"?><tm:root adtcore:name="USUARIO_2" adtcore:changedAt="2026-10-30T21:34:20Z" adtcore:createdAt="2026-10-30T21:34:20Z" adtcore:changedBy="USUARIO_2" adtcore:createdBy="USUARIO_2" xmlns:tm="http://www.sap.com/cts/adt/tm" xmlns:adtcore="http://www.sap.com/adt/core"/>

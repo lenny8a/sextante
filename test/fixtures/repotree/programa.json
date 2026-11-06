@@ -1,0 +1,926 @@
+{
+  "uri": "abap:/repotree-v1/DEST/System%20Library/ZPAQ2/Source%20Library/Programs/ZPROG_EJEMPLO/zprog_ejemplo.prog.abap",
+  "informe": {
+    "fecha": "2026-10-29T18:27:40.861Z",
+    "versionOficial": "1.2.0",
+    "uriEditor": "abap:/repotree-v1/DEST/System%20Library/ZPAQ2/Source%20Library/Programs/ZPROG_EJEMPLO/zprog_ejemplo.prog.abap",
+    "analisis": {
+      "destino": "DEST",
+      "paquetes": [
+        "System Library",
+        "ZPAQ2",
+        "Source Library",
+        "Programs",
+        "ZPROG_EJEMPLO"
+      ],
+      "archivo": "zprog_ejemplo.prog.abap"
+    },
+    "nombreAff": {
+      "nombre": "zprog_ejemplo",
+      "tipo": "prog",
+      "extension": "abap"
+    },
+    "hermanos": {
+      "entradas": [
+        {
+          "nombre": "zprog_ejemplo.prog.json",
+          "tipo": "archivo"
+        },
+        {
+          "nombre": "zprog_ejemplo.prog.abap",
+          "tipo": "archivo"
+        }
+      ],
+      "truncado": false,
+      "total": 2
+    },
+    "cadenaPadres": [
+      {
+        "ruta": "/repotree-v1/DEST/System Library/ZPAQ2/Source Library/Programs/ZPROG_EJEMPLO",
+        "hijos": {
+          "entradas": [
+            {
+              "nombre": "zprog_ejemplo.prog.json",
+              "tipo": "archivo"
+            },
+            {
+              "nombre": "zprog_ejemplo.prog.abap",
+              "tipo": "archivo"
+            }
+          ],
+          "truncado": false,
+          "total": 2
+        }
+      },
+      {
+        "ruta": "/repotree-v1/DEST/System Library/ZPAQ2/Source Library/Programs",
+        "hijos": {
+          "entradas": [
+            {
+              "nombre": "ZPROG_EJEMPLO_2",
+              "tipo": "carpeta"
+            },
+            {
+              "nombre": "ZPROG_EJEMPLO",
+              "tipo": "carpeta"
+            },
+            {
+              "nombre": "ZPROG_EJEMPLO_3",
+              "tipo": "carpeta"
+            },
+            {
+              "nombre": "ZPROG_EJEMPLO_4",
+              "tipo": "carpeta"
+            },
+            {
+              "nombre": "ZPROG_EJEMPLO_5",
+              "tipo": "carpeta"
+            },
+            {
+              "nombre": "ZPROG_EJEMPLO_6",
+              "tipo": "carpeta"
+            },
+            {
+              "nombre": "ZPROG_EJEMPLO_7",
+              "tipo": "carpeta"
+            },
+            {
+              "nombre": "ZPROG_EJEMPLO_8",
+              "tipo": "carpeta"
+            },
+            {
+              "nombre": "ZPROG_EJEMPLO_9",
+              "tipo": "carpeta"
+            },
+            {
+              "nombre": "ZPROG_EJEMPLO_10",
+              "tipo": "carpeta"
+            },
+            {
+              "nombre": "ZPROG_EJEMPLO_11",
+              "tipo": "carpeta"
+            },
+            {
+              "nombre": "ZPROG_EJEMPLO_12",
+              "tipo": "carpeta"
+            },
+            {
+              "nombre": "ZPROG_EJEMPLO_13",
+              "tipo": "carpeta"
+            },
+            {
+              "nombre": "ZPROG_EJEMPLO_14",
+              "tipo": "carpeta"
+            },
+            {
+              "nombre": "ZPROG_EJEMPLO_15",
+              "tipo": "carpeta"
+            },
+            {
+              "nombre": "ZPROG_EJEMPLO_16",
+              "tipo": "carpeta"
+            },
+            {
+              "nombre": "ZPROG_EJEMPLO_17",
+              "tipo": "carpeta"
+            },
+            {
+              "nombre": "ZPROG_EJEMPLO_18",
+              "tipo": "carpeta"
+            },
+            {
+              "nombre": "ZPROG_EJEMPLO_19",
+              "tipo": "carpeta"
+            },
+            {
+              "nombre": "ZPROG_EJEMPLO_20",
+              "tipo": "carpeta"
+            },
+            {
+              "nombre": "ZPROG_EJEMPLO_21",
+              "tipo": "carpeta"
+            },
+            {
+              "nombre": "ZPROG_EJEMPLO_22",
+              "tipo": "carpeta"
+            },
+            {
+              "nombre": "ZPROG_EJEMPLO_23",
+              "tipo": "carpeta"
+            },
+            {
+              "nombre": "ZPROG_EJEMPLO_24",
+              "tipo": "carpeta"
+            },
+            {
+              "nombre": "ZPROG_EJEMPLO_25",
+              "tipo": "carpeta"
+            },
+            {
+              "nombre": "ZPROG_EJEMPLO_26",
+              "tipo": "carpeta"
+            },
+            {
+              "nombre": "ZPROG_EJEMPLO_27",
+              "tipo": "carpeta"
+            },
+            {
+              "nombre": "ZPROG_EJEMPLO_28",
+              "tipo": "carpeta"
+            },
+            {
+              "nombre": "ZPROG_EJEMPLO_29",
+              "tipo": "carpeta"
+            },
+            {
+              "nombre": "ZPROG_EJEMPLO_30",
+              "tipo": "carpeta"
+            },
+            {
+              "nombre": "ZPROG_EJEMPLO_31",
+              "tipo": "carpeta"
+            },
+            {
+              "nombre": "ZPROG_EJEMPLO_32",
+              "tipo": "carpeta"
+            },
+            {
+              "nombre": "ZPROG_EJEMPLO_33",
+              "tipo": "carpeta"
+            },
+            {
+              "nombre": "ZPROG_EJEMPLO_34",
+              "tipo": "carpeta"
+            },
+            {
+              "nombre": "ZPROG_EJEMPLO_35",
+              "tipo": "carpeta"
+            },
+            {
+              "nombre": "ZPROG_EJEMPLO_36",
+              "tipo": "carpeta"
+            },
+            {
+              "nombre": "ZPROG_EJEMPLO_37",
+              "tipo": "carpeta"
+            },
+            {
+              "nombre": "ZPROG_EJEMPLO_38",
+              "tipo": "carpeta"
+            },
+            {
+              "nombre": "ZPROG_EJEMPLO_39",
+              "tipo": "carpeta"
+            },
+            {
+              "nombre": "ZPROG_EJEMPLO_40",
+              "tipo": "carpeta"
+            },
+            {
+              "nombre": "ZPROG_EJEMPLO_41",
+              "tipo": "carpeta"
+            },
+            {
+              "nombre": "ZPROG_EJEMPLO_42",
+              "tipo": "carpeta"
+            },
+            {
+              "nombre": "ZPROG_EJEMPLO_43",
+              "tipo": "carpeta"
+            },
+            {
+              "nombre": "ZPROG_EJEMPLO_44",
+              "tipo": "carpeta"
+            },
+            {
+              "nombre": "ZPROG_EJEMPLO_45",
+              "tipo": "carpeta"
+            },
+            {
+              "nombre": "ZPROG_EJEMPLO_46",
+              "tipo": "carpeta"
+            }
+          ],
+          "truncado": false,
+          "total": 46
+        }
+      },
+      {
+        "ruta": "/repotree-v1/DEST/System Library/ZPAQ2/Source Library",
+        "hijos": {
+          "entradas": [
+            {
+              "nombre": "Classes",
+              "tipo": "carpeta"
+            },
+            {
+              "nombre": "Function Groups",
+              "tipo": "carpeta"
+            },
+            {
+              "nombre": "Programs",
+              "tipo": "carpeta"
+            },
+            {
+              "nombre": "Includes",
+              "tipo": "carpeta"
+            }
+          ],
+          "truncado": false,
+          "total": 4
+        }
+      },
+      {
+        "ruta": "/repotree-v1/DEST/System Library/ZPAQ2",
+        "hijos": {
+          "entradas": [
+            {
+              "nombre": "zpaq2.devck.jsonc",
+              "tipo": "archivo"
+            },
+            {
+              "nombre": "Source Library",
+              "tipo": "carpeta"
+            },
+            {
+              "nombre": "Dictionary",
+              "tipo": "carpeta"
+            },
+            {
+              "nombre": "Message Classes",
+              "tipo": "carpeta"
+            },
+            {
+              "nombre": "Enhancements",
+              "tipo": "carpeta"
+            },
+            {
+              "nombre": "Transactions",
+              "tipo": "carpeta"
+            },
+            {
+              "nombre": "Others",
+              "tipo": "carpeta"
+            }
+          ],
+          "truncado": false,
+          "total": 7
+        }
+      },
+      {
+        "ruta": "/repotree-v1/DEST/System Library",
+        "hijos": {
+          "entradas": [
+            {
+              "nombre": "(1CRMES)ES_GEN",
+              "tipo": "carpeta"
+            },
+            {
+              "nombre": "(ASU)STRUCTURE",
+              "tipo": "carpeta"
+            },
+            {
+              "nombre": "(BDL)STPI_STRUCTURE",
+              "tipo": "carpeta"
+            },
+            {
+              "nombre": "(BODS)RS_DS_FM_APPL",
+              "tipo": "carpeta"
+            },
+            {
+              "nombre": "(GBHCM)GBHCM002",
+              "tipo": "carpeta"
+            },
+            {
+              "nombre": "(GBHCM)GBHCM003",
+              "tipo": "carpeta"
+            },
+            {
+              "nombre": "(ICMTEST)CS_A",
+              "tipo": "carpeta"
+            },
+            {
+              "nombre": "(ISDFPS)MIP",
+              "tipo": "carpeta"
+            },
+            {
+              "nombre": "(IWBEP)FRAMEWORK",
+              "tipo": "carpeta"
+            },
+            {
+              "nombre": "(IWBEP)JSON_RPC",
+              "tipo": "carpeta"
+            }
+          ],
+          "truncado": true,
+          "total": 411
+        }
+      },
+      {
+        "ruta": "/repotree-v1/DEST",
+        "hijos": {
+          "entradas": [
+            {
+              "nombre": "Local Objects ($TMP)",
+              "tipo": "carpeta"
+            },
+            {
+              "nombre": "System Library",
+              "tipo": "carpeta"
+            }
+          ],
+          "truncado": false,
+          "total": 2
+        }
+      }
+    ],
+    "simbolosEstado": "ok",
+    "simbolos": [
+      {
+        "nombre": "TABLA_1",
+        "kind": 18,
+        "nombreKind": "Object",
+        "rango": [
+          1,
+          0,
+          1,
+          21
+        ],
+        "hijos": [],
+        "rangoSeleccion": [
+          1,
+          8,
+          1,
+          21
+        ]
+      },
+      {
+        "nombre": "TABLA_2",
+        "kind": 18,
+        "nombreKind": "Object",
+        "rango": [
+          5,
+          0,
+          5,
+          12
+        ],
+        "hijos": [],
+        "rangoSeleccion": [
+          5,
+          8,
+          5,
+          12
+        ]
+      },
+      {
+        "nombre": "TABLA_3",
+        "kind": 18,
+        "nombreKind": "Object",
+        "rango": [
+          5,
+          0,
+          5,
+          18
+        ],
+        "hijos": [],
+        "rangoSeleccion": [
+          5,
+          14,
+          5,
+          18
+        ]
+      },
+      {
+        "nombre": "TABLA_4",
+        "kind": 18,
+        "nombreKind": "Object",
+        "rango": [
+          5,
+          0,
+          5,
+          24
+        ],
+        "hijos": [],
+        "rangoSeleccion": [
+          5,
+          20,
+          5,
+          24
+        ]
+      },
+      {
+        "nombre": "TABLA_5",
+        "kind": 18,
+        "nombreKind": "Object",
+        "rango": [
+          5,
+          0,
+          5,
+          30
+        ],
+        "hijos": [],
+        "rangoSeleccion": [
+          5,
+          26,
+          5,
+          30
+        ]
+      },
+      {
+        "nombre": "TABLA_6",
+        "kind": 18,
+        "nombreKind": "Object",
+        "rango": [
+          5,
+          0,
+          5,
+          36
+        ],
+        "hijos": [],
+        "rangoSeleccion": [
+          5,
+          32,
+          5,
+          36
+        ]
+      },
+      {
+        "nombre": "TABLA_7",
+        "kind": 18,
+        "nombreKind": "Object",
+        "rango": [
+          5,
+          0,
+          5,
+          42
+        ],
+        "hijos": [],
+        "rangoSeleccion": [
+          5,
+          38,
+          5,
+          42
+        ]
+      },
+      {
+        "nombre": "VAR_1",
+        "kind": 12,
+        "nombreKind": "Variable",
+        "rango": [
+          10,
+          0,
+          10,
+          17
+        ],
+        "hijos": [],
+        "rangoSeleccion": [
+          10,
+          6,
+          10,
+          17
+        ]
+      },
+      {
+        "nombre": "VAR_2",
+        "kind": 12,
+        "nombreKind": "Variable",
+        "rango": [
+          11,
+          0,
+          11,
+          16
+        ],
+        "hijos": [],
+        "rangoSeleccion": [
+          11,
+          6,
+          11,
+          9
+        ]
+      },
+      {
+        "nombre": "VAR_3",
+        "kind": 12,
+        "nombreKind": "Variable",
+        "rango": [
+          16,
+          0,
+          18,
+          15
+        ],
+        "hijos": [],
+        "rangoSeleccion": [
+          16,
+          14,
+          16,
+          17
+        ]
+      },
+      {
+        "nombre": "VAR_4",
+        "kind": 12,
+        "nombreKind": "Variable",
+        "rango": [
+          20,
+          0,
+          32,
+          18
+        ],
+        "hijos": [],
+        "rangoSeleccion": [
+          20,
+          15,
+          20,
+          20
+        ]
+      },
+      {
+        "nombre": "VAR_5",
+        "kind": 12,
+        "nombreKind": "Variable",
+        "rango": [
+          34,
+          0,
+          46,
+          19
+        ],
+        "hijos": [],
+        "rangoSeleccion": [
+          34,
+          15,
+          34,
+          21
+        ]
+      },
+      {
+        "nombre": "VAR_6",
+        "kind": 12,
+        "nombreKind": "Variable",
+        "rango": [
+          48,
+          0,
+          60,
+          19
+        ],
+        "hijos": [],
+        "rangoSeleccion": [
+          48,
+          15,
+          48,
+          21
+        ]
+      },
+      {
+        "nombre": "INITIALIZATION",
+        "kind": 18,
+        "nombreKind": "Object",
+        "rango": [
+          66,
+          0,
+          66,
+          14
+        ],
+        "hijos": [],
+        "rangoSeleccion": [
+          66,
+          0,
+          66,
+          14
+        ]
+      },
+      {
+        "nombre": "VAR_7",
+        "kind": 12,
+        "nombreKind": "Variable",
+        "rango": [
+          71,
+          2,
+          71,
+          42
+        ],
+        "hijos": [],
+        "rangoSeleccion": [
+          71,
+          13,
+          71,
+          17
+        ]
+      },
+      {
+        "nombre": "VAR_8",
+        "kind": 12,
+        "nombreKind": "Variable",
+        "rango": [
+          72,
+          2,
+          72,
+          42
+        ],
+        "hijos": [],
+        "rangoSeleccion": [
+          72,
+          13,
+          72,
+          18
+        ]
+      },
+      {
+        "nombre": "VAR_9",
+        "kind": 12,
+        "nombreKind": "Variable",
+        "rango": [
+          73,
+          2,
+          74,
+          34
+        ],
+        "hijos": [],
+        "rangoSeleccion": [
+          73,
+          14,
+          73,
+          21
+        ]
+      },
+      {
+        "nombre": "VAR_10",
+        "kind": 12,
+        "nombreKind": "Variable",
+        "rango": [
+          75,
+          2,
+          75,
+          60
+        ],
+        "hijos": [],
+        "rangoSeleccion": [
+          75,
+          13,
+          75,
+          18
+        ]
+      },
+      {
+        "nombre": "VAR_11",
+        "kind": 12,
+        "nombreKind": "Variable",
+        "rango": [
+          76,
+          2,
+          76,
+          60
+        ],
+        "hijos": [],
+        "rangoSeleccion": [
+          76,
+          13,
+          76,
+          19
+        ]
+      },
+      {
+        "nombre": "VAR_12",
+        "kind": 12,
+        "nombreKind": "Variable",
+        "rango": [
+          77,
+          2,
+          77,
+          40
+        ],
+        "hijos": [],
+        "rangoSeleccion": [
+          77,
+          13,
+          77,
+          16
+        ]
+      },
+      {
+        "nombre": "AT SELECTION-SCREEN ON VALUE-REQUEST FOR VAR_9",
+        "kind": 18,
+        "nombreKind": "Object",
+        "rango": [
+          80,
+          0,
+          80,
+          48
+        ],
+        "hijos": [],
+        "rangoSeleccion": [
+          80,
+          0,
+          80,
+          48
+        ]
+      },
+      {
+        "nombre": "AT USER-COMMAND",
+        "kind": 18,
+        "nombreKind": "Object",
+        "rango": [
+          92,
+          0,
+          92,
+          15
+        ],
+        "hijos": [],
+        "rangoSeleccion": [
+          92,
+          0,
+          92,
+          15
+        ]
+      },
+      {
+        "nombre": "AT LINE-SELECTION",
+        "kind": 18,
+        "nombreKind": "Object",
+        "rango": [
+          100,
+          0,
+          100,
+          17
+        ],
+        "hijos": [],
+        "rangoSeleccion": [
+          100,
+          0,
+          100,
+          17
+        ]
+      },
+      {
+        "nombre": "TOP-OF-PAGE",
+        "kind": 18,
+        "nombreKind": "Object",
+        "rango": [
+          105,
+          0,
+          105,
+          11
+        ],
+        "hijos": [],
+        "rangoSeleccion": [
+          105,
+          0,
+          105,
+          11
+        ]
+      },
+      {
+        "nombre": "TOP-OF-PAGE DURING LINE-SELECTION",
+        "kind": 18,
+        "nombreKind": "Object",
+        "rango": [
+          107,
+          0,
+          107,
+          33
+        ],
+        "hijos": [],
+        "rangoSeleccion": [
+          107,
+          0,
+          107,
+          33
+        ]
+      },
+      {
+        "nombre": "START-OF-SELECTION",
+        "kind": 18,
+        "nombreKind": "Object",
+        "rango": [
+          112,
+          0,
+          112,
+          18
+        ],
+        "hijos": [],
+        "rangoSeleccion": [
+          112,
+          0,
+          112,
+          18
+        ]
+      },
+      {
+        "nombre": "FORM_1",
+        "kind": 11,
+        "nombreKind": "Function",
+        "rango": [
+          144,
+          0,
+          185,
+          8
+        ],
+        "hijos": [],
+        "rangoSeleccion": [
+          144,
+          5,
+          144,
+          17
+        ]
+      },
+      {
+        "nombre": "FORM_2",
+        "kind": 11,
+        "nombreKind": "Function",
+        "rango": [
+          192,
+          0,
+          294,
+          8
+        ],
+        "hijos": [],
+        "rangoSeleccion": [
+          192,
+          5,
+          192,
+          14
+        ]
+      },
+      {
+        "nombre": "FORM_3",
+        "kind": 11,
+        "nombreKind": "Function",
+        "rango": [
+          304,
+          0,
+          379,
+          8
+        ],
+        "hijos": [],
+        "rangoSeleccion": [
+          304,
+          5,
+          304,
+          34
+        ]
+      },
+      {
+        "nombre": "FORM_4",
+        "kind": 11,
+        "nombreKind": "Function",
+        "rango": [
+          386,
+          0,
+          423,
+          8
+        ],
+        "hijos": [],
+        "rangoSeleccion": [
+          386,
+          5,
+          386,
+          23
+        ]
+      }
+    ],
+    "checkObject": {
+      "ok": true,
+      "resultadoTipo": "undefined",
+      "uriActivaAlLlamar": "abap:/repotree-v1/DEST/System%20Library/ZPAQ2/Source%20Library/Programs/ZPROG_EJEMPLO/zprog_ejemplo.prog.abap"
+    }
+  }
+}

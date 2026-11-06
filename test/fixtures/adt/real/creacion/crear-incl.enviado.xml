@@ -1,0 +1,1 @@
+<?xml version="1.0" encoding="UTF-8"?><include:abapInclude xmlns:include="http://www.sap.com/adt/programs/includes" xmlns:adtcore="http://www.sap.com/adt/core" adtcore:type="PROG/I" adtcore:name="ZPROG_EJEMPLO_TOP" adtcore:description="Ejemplo Sextante: include sin contexto" adtcore:responsible="USUARIO"><adtcore:packageRef adtcore:name="$TMP"/></include:abapInclude>

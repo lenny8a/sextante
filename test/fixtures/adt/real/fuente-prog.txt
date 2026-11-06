@@ -1,0 +1,15 @@
+* VERIFICADO 2026-10-30: GET /sap/bc/adt/programs/programs/RSABAPPROGRAM/source/main -> HTTP/1.1 200  OK
+REPORT rsabapprogram.
+
+AUTHORITY-CHECK OBJECT 'S_TCODE' ID 'TCD' FIELD 'SE38'.
+IF sy-subrc <> 0.
+  MESSAGE e077(s#) WITH 'SE38'.
+ENDIF.
+
+cl_wb_pgeditor_initial_screen=>create_request( IMPORTING wb_request = DATA(wb_request) ).
+cl_wb_startup=>start( EXPORTING p_wb_request_set = VALUE swbm_wb_request_set( ( wb_request ) ) EXCEPTIONS OTHERS = 1 ).
+
+IF sy-subrc <> 0.
+  MESSAGE ID sy-msgid TYPE 'S' NUMBER sy-msgno
+    WITH sy-msgv1 sy-msgv2 sy-msgv3 sy-msgv4 DISPLAY LIKE 'E'.
+ENDIF.
