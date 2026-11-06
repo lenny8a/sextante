@@ -1,5 +1,11 @@
 # Cambios
 
+## 0.1.1 (2026-11-06)
+
+- **Página en inglés.** README principal en inglés (con enlace a la versión en español, `README.es.md`) y
+  descripción del Marketplace en inglés, para que la comunidad SAP de cualquier país pueda conocerla. Sin cambios en
+  la extensión.
+
 ## 0.1.0 — primera versión pública (2026-11-06)
 
 Primera versión publicada, gratuita y de código abierto (licencia MIT). Requiere la extensión oficial

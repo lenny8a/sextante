@@ -1,9 +1,9 @@
 {
   "name": "sextante",
   "displayName": "Sextante",
-  "description": "Navegación tipo SE80 dentro de VS Code sobre ABAP Development Tools: sistemas, búsqueda de objetos, árbol del objeto, acciones y diccionario en contexto.",
+  "description": "SE80-style workbench inside VS Code on top of SAP ABAP Development Tools: systems, object search, object tree, one-click actions, dictionary in context and an AI agent over MCP.",
   "publisher": "lenny",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "preview": true,
   "license": "MIT",
   "repository": {

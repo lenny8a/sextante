@@ -1,137 +1,143 @@
 # Sextante
 
-**Una cara tipo SAP GUI (SE80) dentro de VS Code**, montada encima de la extensión oficial de SAP
-"ABAP Development Tools for Visual Studio Code". Un panel lateral siempre visible donde eliges el
-sistema, buscas un objeto por nombre, ves su estructura como árbol y actúas con botones visibles.
-Sextante solo navega, muestra estado y dispara los comandos de la extensión oficial: editar,
-activar, bloquear y depurar lo sigue haciendo ella.
+**English** · [Español](README.es.md)
 
-> Versión preliminar (preview). Pensada para desarrolladores ABAP que trabajan con varios
-> sistemas S/4HANA. No está afiliada a SAP SE ni respaldada por ella.
+**An SAP GUI (SE80)-style workbench inside VS Code**, built on top of SAP's official extension
+"ABAP Development Tools for Visual Studio Code". An always-visible side panel where you pick the
+system, search an object by name, see its structure as a tree and act with visible buttons.
+Sextante only navigates, shows status and triggers the official extension's commands: editing,
+activating, locking and debugging are still done by it.
 
-## Requisitos
+> Preview release. Built for ABAP developers who work across several S/4HANA systems.
+> The user interface is currently in Spanish; English is planned.
+> Not affiliated with or endorsed by SAP SE.
 
-- VS Code 1.100 o superior.
-- La extensión **ABAP Development Tools for Visual Studio Code** de SAP (`sapse.adt-vscode`),
-  instalada desde el Marketplace. Si falta, Sextante lo avisa y ofrece instalarla. Sextante lee de
-  ella la lista de destinos (`destinations.json`) y usa su sistema de archivos `abap:`; no hay una
-  lista de sistemas propia.
-- Un sistema **S/4HANA** al que la extensión oficial pueda conectarse. ECC queda fuera de alcance.
+## Requirements
 
-## Tutorial rápido
+- VS Code 1.100 or later (also works in VS Code-based editors that install from Open VSX).
+- SAP's **ABAP Development Tools for Visual Studio Code** extension (`sapse.adt-vscode`). If it is
+  missing, Sextante tells you and offers to install it. Sextante reads its list of destinations
+  (`destinations.json`) and uses its `abap:` file system; there is no separate list of systems.
+- An **S/4HANA** system the official extension can connect to. ECC is out of scope.
 
-Dentro de VS Code tienes este mismo recorrido: `Ctrl+Shift+P` → **Welcome: Open Walkthrough…** → **Primeros pasos con
+## Quick tutorial
+
+The same tour is available inside VS Code: `Ctrl+Shift+P` → **Welcome: Open Walkthrough…** → **Primeros pasos con
 Sextante**.
 
-**1. Conecta un sistema.** Abre Sextante en la barra lateral. Los sistemas salen de la extensión oficial; la
-primera vez indicas su rol (DEV, QAS o PRD) y te conectas con tu usuario.
+**1. Connect a system.** Open Sextante in the activity bar. Systems come from the official extension; the first
+time you set each one's role (DEV, QAS or PRD) and log on with your user.
 
-![Panel de Sextante con sistemas, acciones y paquetes](media/tutorial/01-panel.png)
+![Sextante panel with systems, actions and packages](media/tutorial/01-panel.png)
 
-**2. Busca un objeto.** Botón **Buscar objeto** o `Sextante: Buscar objeto`: programas, clases, includes, tablas,
-funciones y transacciones por nombre.
+**2. Find an object.** **Buscar objeto** button or `Sextante: Buscar objeto`: programs, classes, includes, tables,
+function modules and transactions by name.
 
-![Búsqueda rápida de un programa y sus includes](media/tutorial/02-buscar.png)
+![Quick search for a program and its includes](media/tutorial/02-buscar.png)
 
-**3. Recorre su estructura.** La vista Objeto muestra includes, clases locales, métodos y eventos, como SE80. Un
-clic lleva al código.
+**3. Walk its structure.** The Object view shows includes, local classes, methods and events, like SE80. One click
+takes you to the code.
 
-![Árbol del objeto con includes, clases locales y métodos](media/tutorial/03-objeto.png)
+![Object tree with includes, local classes and methods](media/tutorial/03-objeto.png)
 
-**4. Actúa con un clic.** Activar, Activar todo, Verificar sintaxis, ATC, Unit tests, transporte y versiones, siempre
-a la vista.
+**4. Act in one click.** Activate, Activate all, Check syntax, ATC, Unit tests, transport and versions, always in
+sight.
 
-![Vista Acciones](media/tutorial/05-acciones.png)
+![Actions view](media/tutorial/05-acciones.png)
 
-**5. El diccionario en contexto.** Pasa el ratón sobre una tabla o un campo para ver su estructura; el panel
-Diccionario la deja fija y genera `TYPES`, `SELECT` y `DATA`.
+**5. Dictionary in context.** Hover a table or a field to see its structure; the Dictionary panel keeps it pinned and
+generates `TYPES`, `SELECT` and `DATA`.
 
-![Campos de la tabla T001 al pasar el ratón sobre un SELECT](media/tutorial/04-diccionario-hover.png)
+![Fields of table T001 when hovering a SELECT](media/tutorial/04-diccionario-hover.png)
 
-![Panel Diccionario con los campos de la tabla](media/tutorial/06-diccionario-panel.png)
+![Dictionary panel with the table's fields](media/tutorial/06-diccionario-panel.png)
 
-**6. Trabaja con un agente de IA.** Conecta Claude Code con `Sextante: Conectar el agente (Claude Code)`. El agente
-propone cada cambio como un diff y tú decides con **Aplicar** o **Rechazar**.
+**6. Work with an AI agent.** Connect Claude Code with `Sextante: Conectar el agente (Claude Code)`. The agent
+proposes every change as a diff and you decide with **Aplicar** (apply) or **Rechazar** (reject).
 
-![Propuesta del agente en un diff con Aplicar y Rechazar](media/tutorial/07-agente-propuesta.png)
+![Agent proposal shown as a diff with Apply and Reject](media/tutorial/07-agente-propuesta.png)
 
-## Qué hace
+## What it does
 
-**Sistemas.** Lista tus destinos y, la primera vez, pregunta el rol de cada uno: DEV, QAS o PRD.
-Nada más que configurar. Muestra qué vía usa para la búsqueda rápida y el diccionario.
+**Systems.** Lists your destinations and, the first time, asks each one's role: DEV, QAS or PRD.
+Nothing else to configure. Shows which channel it uses for quick search and the dictionary.
 
-**Buscar objeto.** `Sextante: Buscar objeto` abre una búsqueda rápida por nombre (programas,
-clases, interfaces, tablas, módulos de funciones, transacciones…). También buscar texto en ABAP.
+**Find object.** Quick search by name (programs, classes, interfaces, tables, function modules,
+transactions…), plus full-text search in ABAP.
 
-**Objeto.** Árbol del objeto abierto al estilo SE80 / SE24: componentes, métodos, includes, con
-salto al código. Puedes fijar el objeto y abrir los métodos como bloque. **Ctrl+clic** (o F12) sobre un
-`PERFORM` lleva a su `FORM`, aunque esté en otro include del programa, como el doble clic de SE80; con el
-modo bloque activo se abre como bloque. Para volver, **Alt+Flecha izquierda** (nativo de VS Code).
+**Object.** SE80 / SE24-style tree of the open object: components, methods, includes, with a jump
+to the code. Pin the object and open methods as a block. **Ctrl+click** (or F12) on a `PERFORM`
+goes to its `FORM`, even in another include of the program, like SE80's double click. **Alt+Left
+Arrow** takes you back.
 
-**Acciones.** Botones sobre el objeto activo: Activar, Activar todo…, Verificar sintaxis, ATC, Unit tests,
-Transporte, Comparar con la última versión o con otro sistema, Ejecutar, Documentación e
-Historial de versiones. Son los comandos de la extensión oficial, un clic más cerca.
+**Actions.** Buttons on the active object: Activate, Activate all…, Check syntax, ATC, Unit tests,
+Transport, Compare with the last version or with another system, Execute, Documentation and
+Version history. They are the official extension's commands, one click closer.
 
-**Paquetes.** Explorador de paquetes del sistema activo.
+**Packages.** Package explorer for the active system.
 
-**Diccionario en contexto.** Al pasar el ratón sobre una tabla, un campo, un elemento de datos,
-un dominio, un mensaje, un módulo de funciones o un método, ves su definición. El panel
-Diccionario permite "Ver datos" (Data Preview, solo tablas), "Dónde se usa" acotado a tus objetos
-propios y generar `TYPES`, `SELECT` o `DATA` en el cursor.
+**Dictionary in context.** Hover a table, field, data element, domain, message, function module or
+method to see its definition. The Dictionary panel adds "Ver datos" (data preview, tables only),
+where-used limited to your own objects, and generates `TYPES`, `SELECT` or `DATA` at the cursor.
 
-**Consola SQL** con identificadores validados (nunca texto libre), **Dumps y feeds** del sistema y
-**Nuevo objeto ABAP** guiado.
+**Transport requests, versions and monitor.** Your transport requests per system and the request of
+the open object; version history with diffs; compare the same object across DEV / QAS / PRD;
+today's short dumps (ST22) summarized with jumps to the code; inactive objects.
 
-**Agente de IA.** Sextante incluye un servidor MCP local (solo `127.0.0.1`, con token) para que Claude
-Code u otro cliente MCP vea lo que tú: el objeto abierto, el cursor, el programa completo con sus
-includes y la estructura, y pueda abrir objetos y transacciones en tu editor. Esta primera entrega es de
-lectura. Se conecta con `Sextante: Conectar el agente (Claude Code)`; la guía está en
-`docs/agente-ia.md` del repositorio.
+**SQL console** with validated identifiers (never free text) and a guided **New ABAP object**.
 
-**Tema "Sextante Oscuro"** con paleta One Dark y gramáticas propias para ABAP y ABAP SQL. Es
-opcional: la extensión te lo propone una vez.
+**AI agent.** Sextante ships a local MCP server (`127.0.0.1` only, token-protected) so Claude Code or
+any MCP client sees what you see: the open object, the cursor, the whole program with its includes
+and its structure. The agent proposes every code change as a diff you apply or reject, checks syntax,
+runs unit tests and ATC, queries the system (release and components), requests new objects through the
+official wizard and keeps a journal per object. Writing is allowed only on DEV systems and activation
+always asks for your confirmation. Guide: [docs/agente-ia.md](docs/agente-ia.md) (Spanish).
 
-## Cómo se conecta
+**"Sextante Oscuro" theme** with a One Dark palette and grammars for ABAP and ABAP SQL. Optional:
+the extension suggests it once.
 
-Sextante no te pide elegir vía. Por sistema decide sola:
+## How it connects
 
-1. **RFC**, si el destino es `protocol: rfc` y están el JRE y el JCo que instala la extensión
-   oficial. Solo en **Windows**.
-2. **REST** por HTTP directo a ADT, si hay una URL guardada o un candidato responde.
-3. El **buscador de la extensión oficial**, en cualquier otro caso.
+You never pick a channel. Per system, Sextante decides:
 
-Los destinos con SSO/SNC no usan ni RFC ni REST propios. BTP (OAuth) no está soportado para la
-conexión propia.
+1. **RFC**, when the destination is `protocol: rfc` and the JRE and JCo installed by the official
+   extension are present. **Windows** only.
+2. **REST** over direct HTTP to ADT, when a URL is saved or a candidate answers.
+3. The **official extension's search**, otherwise.
 
-## Seguridad y privacidad
+Destinations with SSO/SNC use neither its own RFC nor REST. BTP (OAuth) is not supported for its own
+connection.
 
-- En sistemas con rol **QAS o PRD** el código se abre en **solo lectura** y los botones Activar,
-  Activar todo…, Bloquear y Transporte se deshabilitan. Es una red de seguridad, no un control de acceso.
-- Las contraseñas de la conexión propia se guardan únicamente en el almacén seguro de VS Code.
-  Nunca en settings, archivos ni logs.
-- Por RFC, en QAS/PRD solo pasan lecturas; cualquier escritura se rechaza.
-- **Sin telemetría.** Sextante no envía nada a ningún servidor que no sea tu sistema SAP.
-- El registro (Output Channel "Sextante") solo contiene la forma de las peticiones y conteos.
+## Security and privacy
 
-## Configuración
+- On systems with role **QAS or PRD**, code opens **read-only** and Activate, Activate all…, Lock and
+  Transport are disabled. A safety net, not access control.
+- Passwords for its own connection are stored only in VS Code's secret storage. Never in settings,
+  files or logs.
+- Over RFC, QAS/PRD only allow reads; any write is rejected.
+- **No telemetry.** Sextante sends nothing anywhere except your SAP system.
+- The log (Output channel "Sextante") only holds the shape of requests and counts.
 
-Casi ninguna. Por sistema se pregunta una vez el rol y, si se usa la búsqueda REST, la
-contraseña. Los prefijos de objetos propios (por defecto `Z` e `Y`) se amplían desde el propio
-panel Diccionario con "Añadir a prefijos propios".
+## Configuration
 
-## Limitaciones conocidas
+Almost none. Each system asks once for its role and, if REST search is used, the password. Your own
+object prefixes (`Z` and `Y` by default) are extended from the Dictionary panel with "Añadir a
+prefijos propios".
 
-- La vía RFC existe solo en Windows; en macOS y Linux se usa REST o el buscador de la oficial.
-- Sin SSO/SNC ni BTP para la conexión propia.
-- Solo S/4HANA, porque la extensión oficial no soporta ECC.
+## Known limitations
 
-## Licencia
+- The RFC channel exists only on Windows; macOS and Linux use REST or the official search.
+- No SSO/SNC or BTP for its own connection.
+- S/4HANA only, because the official extension does not support ECC.
+- User interface in Spanish for now.
 
-Software libre bajo la licencia MIT (archivo `LICENSE.md`): puedes usarlo, copiarlo, modificarlo y redistribuirlo, también con
-fines comerciales, manteniendo el aviso de copyright. Es un aporte a la comunidad SAP de Lennin Rodriguez,
-desarrollador SAP ABAP de Honduras.
+## License
 
-Sextante requiere la extensión oficial "ABAP Development Tools for Visual Studio Code" de SAP SE, que se instala por
-separado bajo su propia licencia; Sextante no incluye ni redistribuye componentes de SAP. SAP, ABAP y S/4HANA son
-marcas de SAP SE; se mencionan únicamente para describir la compatibilidad. Sextante no está afiliado a SAP SE ni
-respaldado por ella.
+Free and open source under the MIT license (`LICENSE.md`): use, copy, modify and redistribute it, commercially
+too, keeping the copyright notice. A contribution to the SAP community by Lennin Rodriguez, SAP ABAP developer
+from Honduras.
+
+Sextante requires SAP SE's official "ABAP Development Tools for Visual Studio Code" extension, installed
+separately under its own license; Sextante does not include or redistribute any SAP component. SAP, ABAP and
+S/4HANA are trademarks of SAP SE, mentioned only to describe compatibility. Sextante is not affiliated with or
+endorsed by SAP SE.
